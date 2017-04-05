@@ -1,0 +1,35 @@
+<%= form_tag("/advisors", method: "post") do %>
+  <label for="name"> Name </label>
+  <div>
+      <input type="text" name="name" value="<%= @advisor.name %>">    
+    </div>
+  
+  <label for="company"> Company </label>
+    <div>
+      <input type="text" name="company" value="<%= @advisor.company %>">    
+    </div>
+
+  <label for="phone"> phone </label>
+    <div>
+      <input type="text" name="phone" value="<%= @advisor.phone %>">    
+    </div>
+
+  <label for="email"> email </label>
+    <div>
+      <input type="text" name="email" value="<%= @advisor.email %>">    
+    </div>
+
+  <label for="logo"> Logo </label>
+    <div>
+      <input type="text" name="logo" value="<%= @advisor.logo %>">    
+    </div>
+
+  <label for="password"> Password </label>
+    <div>
+      <input type="text" name="password"> 
+    </div>
+
+    <div>
+      <input type="submit">
+    </div>
+<% end %>
