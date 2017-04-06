@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expiration: 2017-04-05 18:55:12
+  advisor_id: 1
+  client_id: 1
+  status: MyString
+
+two:
+  expiration: 2017-04-05 18:55:12
+  advisor_id: 1
+  client_id: 1
+  status: MyString

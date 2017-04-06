@@ -25,12 +25,12 @@
       <input type="text" name="logo" value="<%= @advisor.logo %>">    
     </div>
 
-  <label for="password"> Password </label>
-    <div>
-      <input type="text" name="password"> 
-    </div>
-
     <div>
       <input type="submit" value="Edit this Advisor">
     </div>
+<% end %>
+
+<h4>Want to Delete this Advisor?</h4>
+<%= form_tag "/advisors/#{@advisor.id}", method: :delete do %>
+  <input type="submit" value="This will delete this Advisor">
 <% end %>

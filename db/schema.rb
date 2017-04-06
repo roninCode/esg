@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403021044) do
+ActiveRecord::Schema.define(version: 20170405234151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,46 @@ ActiveRecord::Schema.define(version: 20170403021044) do
     t.string   "logo"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "risk_tolerance"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.datetime "expiration"
+    t.integer  "advisor_id"
+    t.integer  "client_id"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "proposals", force: :cascade do |t|
+    t.integer  "risk_model_id"
+    t.integer  "client_id"
+    t.integer  "advisor_id"
+    t.integer  "invitation_id"
+    t.string   "status"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "risk_models", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "risk_level"
+    t.text     "description"
+    t.string   "allocations"
+    t.string   "companies"
+    t.string   "etfs"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

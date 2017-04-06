@@ -17,12 +17,11 @@ class AdvisorsController < ApplicationController
   def update
     @advisor = Advisor.find_by(id: params[:id])
     if @advisor.update(
-        name: params["name"],
-        company: params["company"],
-        phone: params["phone"],
-        email: params["email"],
-        password_digest: params["password_digest"],
-        logo: params["logo"]
+        name: params[:name],
+        company: params[:company],
+        phone: params[:phone],
+        email: params[:email],
+        logo: params[:logo]
       )
       flash[:info] = "You just updated this advisor"
       redirect_to "/advisors/#{@advisor.id}"
@@ -31,24 +30,28 @@ class AdvisorsController < ApplicationController
     end
   end
 
+  def new
+    @advisor = Advisor.new
+    render "new.html.erb"
+  end  
+
   def create
     advisor = Advisor.new(
       name: params[:name],
       company: params[:company],
       phone: params[:phone],
-      password_digest: params[:password_digest],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation],
       email: params[:email],
       logo: params[:logo]
-      )
+    )
     advisor.save
     redirect_to '/advisors'
   end
 
-  def new
-    @advisor = Advisor.new
-    render "new.html.erb"
-  end
-
   def destroy
+    advisor = Advisor.find_by(id: params[:id])
+    advisor.destroy
+    redirect_to '/advisors'
   end
 end

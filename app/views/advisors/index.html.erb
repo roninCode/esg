@@ -1,5 +1,10 @@
-Advisor's Index
-
+<h3>Advisors</h3>
+<hr>
 <% @advisors.each do |advisor| %>
+  <p>ID: <%= advisor.id %></p>
   <p><%= advisor.name %> from <%= advisor.company %></p>
+  <p>Phone: <%= advisor.phone %></p> 
+  <p>email: <%= advisor.email %></p>  
+  <hr>
+
 <% end %>

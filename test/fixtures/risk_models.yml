@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  risk_level: 1
+  description: MyText
+  allocations: MyString
+  companies: MyString
+  etfs: MyString
+
+two:
+  name: MyString
+  risk_level: 1
+  description: MyText
+  allocations: MyString
+  companies: MyString
+  etfs: MyString

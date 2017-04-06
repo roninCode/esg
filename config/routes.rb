@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/' => 'advisors#index'
+
   get '/advisors' => 'advisors#index'
 
   get '/advisors/new' => 'advisors#new'
@@ -11,7 +13,17 @@ Rails.application.routes.draw do
 
   patch '/advisors/:id' => 'advisors#update'
 
-  # delete '/advisors/:id' => 'advisors#destroy'
+  delete '/advisors/:id' => 'advisors#destroy'
+
+
+#############################
+  get '/clients' => 'clients#index'
+  
+  get '/clients/new' => 'clients#new'
+
+  post '/clients' => 'clients#create' 
+
+  get '/clients/:id' => 'clients#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

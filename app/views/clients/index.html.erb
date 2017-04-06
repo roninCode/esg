@@ -1,0 +1,9 @@
+<h3>Clients</h3>
+<hr>
+<% @clients.each do |client| %>
+  <p>ID: <%= client.id %></p>
+  <p>Name: <%= client.name %></p>
+  <p>Phone: <%= client.phone %></p>
+  <p>Email: <%= client.email %></p>
+  <hr>
+<% end %>
