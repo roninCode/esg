@@ -1,2 +1,31 @@
-<h1>Clients#edit</h1>
-<p>Find me in app/views/clients/edit.html.erb</p>
+<%= @client.name %>
+
+<%= form_tag("/clients/#{@client.id}", method: "patch") do %>
+  <div>
+      <input type="text" name="name" value="<%= @client.name %>">    
+    </div>
+
+  <label for="phone"> Phone </label>
+    <div>
+      <input type="text" name="phone" value="<%= @client.phone %>">    
+    </div>
+
+  <label for="email"> Email </label>
+    <div>
+      <input type="text" name="email" value="<%= @client.email %>">    
+    </div>
+
+  <label for="risk_tolerance"> Risk Tolerance </label>
+    <div>
+      <input type="text" name="risk_tolerance" value="<%= @client.risk_tolerance %>">    
+    </div>
+
+    <div>
+      <input type="submit" value="Edit this client">
+    </div>
+<% end %>
+
+<h4>Want to Delete this client?</h4>
+<%= form_tag "/clients/#{@client.id}", method: :delete do %>
+  <input type="submit" value="This will delete this Advisor">
+<% end %>

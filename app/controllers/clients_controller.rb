@@ -28,11 +28,28 @@ class ClientsController < ApplicationController
   end
 
   def edit
+    @client = Client.find_by(id: params[:id])
+    render 'edit.html.erb'
   end
 
   def update
+    @client = Client.find_by(id: params[:id])
+    if @client.update(
+      name: params[:name],
+      email: params[:email],
+      phone: params[:phone],
+      risk_tolerance: params[:risk_tolerance]    
+    )
+      flash[:info] = "You just updated this client"
+      redirect_to "/clients/#{@client.id}"
+    else
+      render 'edit.html.erb'
+    end
   end
 
   def destroy
+    client = Client.find_by(id: params[:id])
+    client.destroy
+    redirect_to '/clients'
   end
 end
