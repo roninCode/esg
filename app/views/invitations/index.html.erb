@@ -1,0 +1,9 @@
+<h3>All Invitations</h3>
+
+<% @invitations.each do |invitation| %>
+  <p>Advisor_id: <%= invitation.advisor_id %></p>
+  <p>Client_id: <%= invitation.client_id %></p>
+  <p>Status: <%= invitation.status %></p>
+  <hr>
+<% end %>
+

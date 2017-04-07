@@ -1,0 +1,22 @@
+<h3>Edit this Invitation</h3>
+
+<%= form_tag("/invitations/#{@invitation.id}", method: "patch") do %>
+  <label for="advisor_id"> Advisor ID </label>
+  <div>
+      <input type="text" name="advisor_id" value="<%= @invitation.advisor_id %>">    
+    </div>
+  
+  <label for="client_id"> Client ID </label>
+    <div>
+      <input type="text" name="client_id" value="<%= @invitation.client_id %>">    
+    </div>
+
+  <label for="status"> Status </label>
+    <div>
+      <input type="text" name="status" value="<%= @invitation.status %>">    
+    </div>
+
+    <div>
+      <input type="submit">
+    </div>
+<% end %>

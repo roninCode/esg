@@ -1,0 +1,21 @@
+<h3>Create a new Inviation Here</h3>
+
+<%= form_tag("/invitations", method: "post") do %>
+  <label for="advisor_id"> Advisor ID </label>
+  <div>
+      <input type="text" name="advisor_id">    
+    </div>
+  
+  <label for="client_id"> Client ID </label>
+    <div>
+      <input type="text" name="client_id">    
+    </div>
+
+  <label for="status"> Status </label>
+    <div>
+      <input type="text" name="status">    
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+<% end %>
