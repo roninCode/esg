@@ -23,7 +23,9 @@ class ClientsController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation]
     )
-    client.save
+    if client.save
+      flash[:info] = "You created a new client"
+    end
     redirect_to '/clients' 
   end
 
@@ -49,7 +51,9 @@ class ClientsController < ApplicationController
 
   def destroy
     client = Client.find_by(id: params[:id])
-    client.destroy
+    if client.destroy
+      flash[:danger] = "You destroyed this client"
+    end
     redirect_to '/clients'
   end
 end

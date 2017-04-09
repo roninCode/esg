@@ -19,7 +19,9 @@ class InvitationsController < ApplicationController
       client_id: params['client_id'],
       status: params['status']
     )
-    invitation.save
+    if invitation.save
+      flash[:info] = "You created a new invitation"
+    end
     redirect_to '/invitations'
   end
 
@@ -35,6 +37,7 @@ class InvitationsController < ApplicationController
       client_id: params[:client_id],
       status: params[:status]
     )
+      flash[:info] = "You just updated this invitation"
       redirect_to '/invitations'
     else
       render 'edit.html.erb'
@@ -43,7 +46,9 @@ class InvitationsController < ApplicationController
 
   def destroy
     invitation = Invitation.find_by(id: params[:id])
-    invitation.destroy
+    if invitation.destroy
+      flash[:danger] = "You just destroyed this invitation"
+    end
     redirect_to '/invitations'
   end
 end

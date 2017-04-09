@@ -21,7 +21,9 @@ class ProposalsController < ApplicationController
     invitation_id: params['invitation_id'],
     status: params['status']
     )
-    @proposal.save
+    if @proposal.save
+      flash[:info] = "You just created a new Proposal"
+    end
     redirect_to "/proposals"
   end
 
@@ -48,7 +50,9 @@ class ProposalsController < ApplicationController
 
   def destroy
     @proposal = Proposal.find_by(id: params[:id])
-    @proposal.destroy
+    if @proposal.destroy
+      flash[:danger] = "You just destroyed this Proposal"
+    end
     redirect_to '/proposals'
   end
 end

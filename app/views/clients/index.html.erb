@@ -1,9 +1,15 @@
 <h3>Clients</h3>
 <hr>
-<% @clients.each do |client| %>
-  <p>ID: <%= client.id %></p>
-  <p>Name: <%= client.name %></p>
-  <p>Phone: <%= client.phone %></p>
-  <p>Email: <%= client.email %></p>
-  <hr>
+<% @clients.each_slice(3) do |client3| %>
+  <div class="row">
+    <% client3.each do |client| %>
+      <div class="col-md-4 well">    
+        <p>ID: <%= client.id %></p>
+        <p>Name: <%= client.name %></p>
+        <p>Phone: <%= client.phone %></p>
+        <p>Email: <%= client.email %></p>
+        <a href="/clients/<%= client.id %>/edit">Edit/Delete this Client</a>
+      </div>
+    <% end %>
+  </div>
 <% end %>

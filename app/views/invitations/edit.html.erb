@@ -20,3 +20,9 @@
       <input type="submit">
     </div>
 <% end %>
+
+
+<h4>Want to delete this Invitation?</h4>
+<%= form_tag "/invitations/#{@invitation.id}", method: :delete do %>
+    <input type="submit" value="This will delete this Invitation">
+<% end %>
