@@ -1,0 +1,33 @@
+<h3>Create a new Risk Model Here</h3>
+
+<%= form_tag("/risk_models", method: "post") do %>
+  <label for="name"> Name </label>
+  <div>
+      <input type="text" name="name">    
+    </div>
+  
+  <label for="risk_level"> Risk Level </label>
+    <div>
+      <input type="text" name="risk_level">    
+    </div>
+
+  <label for="description"> Description </label>
+    <div>
+      <input type="text" name="description">    
+    </div>
+  <label for="allocations"> Allocations </label>
+    <div>
+      <input type="text" name="allocations">    
+    </div>
+  <label for="companies"> Companies </label>
+    <div>
+      <input type="text" name="companies">    
+    </div>
+  <label for="etfs"> ETFs </label>
+    <div>
+      <input type="text" name="etfs">    
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+<% end %>

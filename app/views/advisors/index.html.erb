@@ -1,10 +1,18 @@
+<div class="container-fluid">
 <h3>Advisors</h3>
 <hr>
-<% @advisors.each do |advisor| %>
-  <p>ID: <%= advisor.id %></p>
-  <p><%= advisor.name %> from <%= advisor.company %></p>
-  <p>Phone: <%= advisor.phone %></p> 
-  <p>email: <%= advisor.email %></p>  
-  <hr>
+  <% @advisors.each_slice(3) do |advisor3| %>
+    <div class="row">
+      <% advisor3.each do |advisor| %>
+        <div class="col-md-4 well">
+          <p>ID: <%= advisor.id %></p>
+          <p><%= advisor.name %> from <%= advisor.company %></p>
+          <p>Phone: <%= advisor.phone %></p> 
+          <p>email: <%= advisor.email %></p>  
+          <a href="/advisors/<%= advisor.id %>">Edit/Delete this Advisor</a>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
-<% end %>
+</div>

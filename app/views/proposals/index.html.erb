@@ -1,0 +1,12 @@
+<h3>All the Proposals</h3>
+
+<% @proposals.each do |proposal| %>
+  <p>Proposal ID:<%= proposal.id %></p>
+  <p>Advisor ID:<%= proposal.advisor_id %></p>
+  <p>Client ID:<%= proposal.client_id %></p>
+  <p>Invitaion ID:<%= proposal.invitation_id %></p>
+  <p>Risk Model ID:<%= proposal.risk_model_id %></p>
+  <p>Status:<%= proposal.status %></p>
+
+
+<% end %>

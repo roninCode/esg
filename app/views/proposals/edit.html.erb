@@ -1,0 +1,37 @@
+<h3>Proposal ID: <%= @proposal.id %> </h3>
+
+<%= form_tag("/proposals/#{@proposal.id}", method: "patch") do %>
+  <label for=risk_model_id>Risk Model ID</label>
+  <div>
+    <input type="text" name="risk_model_id" value="<%= @proposal.risk_model_id %>">    
+  </div>
+  
+  <label for="advisor_id"> Advisor ID </label>
+    <div>
+      <input type="text" name="advisor_id" value="<%= @proposal.advisor_id %>">    
+    </div>
+
+  <label for="client_id"> Client ID </label>
+    <div>
+      <input type="text" name="client_id" value="<%= @proposal.client_id %>">    
+    </div>
+
+  <label for="invitation_id"> Invitation ID </label>
+    <div>
+      <input type="text" name="invitation_id" value="<%= @proposal.invitation_id %>">    
+    </div>
+
+  <label for="status"> Status </label>
+    <div>
+      <input type="text" name="status" value="<%= @proposal.status %>">    
+    </div>
+
+    <div>
+      <input type="submit" value="Edit this Proposal">
+    </div>
+<% end %>
+
+<h4>Want to Delete this Proposal?</h4>
+<%= form_tag "/proposals/#{@proposal.id}", method: :delete do %>
+  <input type="submit" value="This will delete this proposal">
+<% end %>

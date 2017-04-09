@@ -1,0 +1,2 @@
+module RiskModelsHelper
+end

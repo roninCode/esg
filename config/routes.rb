@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get '/' => 'advisors#index'
 
   get '/advisors' => 'advisors#index'
@@ -46,6 +53,47 @@ Rails.application.routes.draw do
   patch '/invitations/:id' => 'invitations#update'
 
   delete '/invitations/:id' => 'invitations#destroy'
+
+#############################
+
+  get '/proposals' => 'proposals#index'
+  
+  get '/proposals/new' => 'proposals#new'
+
+  post '/proposals' => 'proposals#create' 
+
+  get '/proposals/:id' => 'proposals#show'
+
+  get 'proposals/:id/edit' => 'proposals#edit'
+
+  patch '/proposals/:id' => 'proposals#update'
+
+  delete '/proposals/:id' => 'proposals#destroy'
+
+#############################
+  
+  get '/risk_models' => 'risk_models#index'
+  
+  get '/risk_models/new' => 'risk_models#new'
+
+  post '/risk_models' => 'risk_models#create' 
+
+  get '/risk_models/:id' => 'risk_models#show'
+
+  get 'risk_models/:id/edit' => 'risk_models#edit'
+
+  patch '/risk_models/:id' => 'risk_models#update'
+
+  delete '/risk_models/:id' => 'risk_models#destroy'
+
+#############################
+
+  get '/login' => 'sessions#new'
+
+  post '/login' => 'sessions#create'
+
+  get '/logout' => 'sessions#destroy'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

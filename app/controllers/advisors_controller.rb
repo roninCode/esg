@@ -45,13 +45,17 @@ class AdvisorsController < ApplicationController
       email: params[:email],
       logo: params[:logo]
     )
-    advisor.save
+    if advisor.save
+      flash[:info] = "You just created a new advisor"
+    end
     redirect_to '/advisors'
   end
 
   def destroy
     advisor = Advisor.find_by(id: params[:id])
-    advisor.destroy
+    if advisor.destroy
+      flash[:danger] = "You just destroyed this advisor"
+    end
     redirect_to '/advisors'
   end
 end

@@ -1,0 +1,40 @@
+<h3>Risk Model ID: <%= @risk_model.id %> </h3>
+
+<%= form_tag("/risk_models/#{@risk_model.id}", method: "patch") do %>
+  <label for=name>Name</label>
+  <div>
+    <input type="text" name="name" value="<%= @risk_model.name %>">    
+  </div>
+  
+  <label for="risk_level"> Risk Level </label>
+    <div>
+      <input type="text" name="risk_level" value="<%= @risk_model.risk_level %>">    
+    </div>
+
+  <label for="description"> Description </label>
+    <div>
+      <input type="text" name="description" value="<%= @risk_model.description %>">    
+    </div>
+
+  <label for="allocations"> Allocations </label>
+    <div>
+      <input type="text" name="allocations" value="<%= @risk_model.allocations %>">    
+    </div>
+
+  <label for="companies"> Companies </label>
+    <div>
+      <input type="text" name="companies" value="<%= @risk_model.companies %>">    
+    </div>
+  <label for="etfs"> ETFs </label>
+    <div>
+      <input type="text" name="etfs" value="<%= @risk_model.etfs %>">    
+    </div>
+    <div>
+      <input type="submit" value="Edit this risk_model">
+    </div>
+<% end %>
+
+<h4>Want to Delete this risk_model?</h4>
+<%= form_tag "/risk_models/#{@risk_model.id}", method: :delete do %>
+  <input type="submit" value="This will delete this Risk Model">
+<% end %>
