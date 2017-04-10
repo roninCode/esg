@@ -29,4 +29,8 @@ class SessionsController < ApplicationController
 
     redirect_to '/login'
   end
+
+  def signup
+
+  end
 end

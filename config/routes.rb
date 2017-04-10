@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  get '/' => 'advisors#index'
+  get '/' => 'signups#new'
 
   get '/advisors' => 'advisors#index'
 
@@ -94,6 +88,7 @@ Rails.application.routes.draw do
 
   get '/logout' => 'sessions#destroy'
 
+  get '/signup' => 'sessions#signup'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
