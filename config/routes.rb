@@ -22,7 +22,6 @@ Rails.application.routes.draw do
 
   delete '/advisors/:id' => 'advisors#destroy'
 
-
 #############################
   get '/clients' => 'clients#index'
   
