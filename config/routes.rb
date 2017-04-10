@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  
+  get '/about' => 'home_pages#about'
 
-  get '/' => 'signups#new'
+  get '/home' => 'home_pages#index'
 
   get '/advisors' => 'advisors#index'
 
