@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   
-  get '/about' => 'home_pages#about'
+  get '/' => 'home_pages#index'
 
   get '/home' => 'home_pages#index'
+  
+  get '/about' => 'home_pages#about'
+
+  get '/esg' => 'home_pages#esg'
 
   get '/advisors' => 'advisors#index'
 

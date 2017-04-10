@@ -6,4 +6,8 @@ class HomePagesController < ApplicationController
   def about
     render 'about.html.erb'
   end
+
+  def esg
+    render 'esg.html.erb'
+  end
 end
