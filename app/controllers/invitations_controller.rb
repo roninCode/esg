@@ -1,6 +1,11 @@
 class InvitationsController < ApplicationController
   def index
-    @invitations = Invitation.all
+    @invitations = []
+    Invitation.all.each do |invitation|
+      if invitation.advisor_id == current_advisor.id
+        @invitations << invitation
+      end
+    end
     render 'index.html.erb'
   end
 

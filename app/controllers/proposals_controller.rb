@@ -1,6 +1,13 @@
 class ProposalsController < ApplicationController
   def index
-    @proposals = Proposal.all
+    @proposals = []
+    Proposal.all.each do |proposal|
+      if current_client && proposal.client_id == current_client.id
+        @proposals << Proposal.find_by(client_id: "#{current_client.id}")
+      elsif current_advisor && proposal.advisor_id == current_advisor.id
+        @proposals << Proposal.find_by(advisor_id: "#{current_advisor.id}")
+      end
+    end
     render 'index.html.erb'
   end
 

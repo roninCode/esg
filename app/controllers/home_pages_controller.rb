@@ -10,4 +10,5 @@ class HomePagesController < ApplicationController
   def esg
     render 'esg.html.erb'
   end
+  
 end

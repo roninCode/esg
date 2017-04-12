@@ -1,7 +1,13 @@
 class ClientsController < ApplicationController
   def index
-    @clients = Client.all
+    @advisor_clients = []
+    Invitation.all.each do |invit|
+      if invit.advisor_id == current_advisor.id
+        @advisor_clients << Client.find("#{invit.client_id}")
+      end
+    end
     render 'index.html.erb'
+    # @clients = Client.all
   end
 
   def show
@@ -24,9 +30,10 @@ class ClientsController < ApplicationController
       password_confirmation: params[:password_confirmation]
     )
     if client.save
+      session[:client_id] = client.id
       flash[:info] = "You created a new client"
     end
-    redirect_to '/clients' 
+    redirect_to '/advisors' 
   end
 
   def edit

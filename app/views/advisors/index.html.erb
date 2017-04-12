@@ -1,7 +1,7 @@
 <div class="container-fluid">
 <h3>Advisors</h3>
 <hr>
-  <% @advisors.each_slice(3) do |advisor3| %>
+  <% @client_advisors.each_slice(3) do |advisor3| %>
     <div class="row">
       <% advisor3.each do |advisor| %>
         <div class="col-md-4 well">
@@ -14,5 +14,7 @@
       <% end %>
     </div>
   <% end %>
+
+<a href="/invitations/new"><h4>Invite a New Client</h4></a>
 
 </div>

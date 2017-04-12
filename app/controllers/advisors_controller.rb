@@ -1,6 +1,11 @@
 class AdvisorsController < ApplicationController
   def index
-    @advisors = Advisor.all
+    @client_advisors = []
+    Invitation.all.each do |invit|
+      if invit.client_id == current_client.id
+        @client_advisors << Advisor.find("#{invit.advisor_id}")
+      end
+    end
     render 'index.html.erb'
   end
 
@@ -46,9 +51,10 @@ class AdvisorsController < ApplicationController
       logo: params[:logo]
     )
     if advisor.save
+      session[:advisor_id] = advisor.id
       flash[:info] = "You just created a new advisor"
     end
-    redirect_to '/advisors'
+    redirect_to '/clients'
   end
 
   def destroy

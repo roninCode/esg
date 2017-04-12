@@ -10,11 +10,11 @@ class SessionsController < ApplicationController
     if advisor && advisor.authenticate(params[:password])
       session[:advisor_id] = advisor.id
       flash[:success] = 'Successfully logged in!'
-      redirect_to '/advisors'
+      redirect_to '/clients'
     elsif client && client.authenticate(params[:password])
       session[:client_id] = client.id
       flash[:success] = 'Successfully logged in!'
-      redirect_to '/clients'
+      redirect_to '/advisors'
     else
       flash[:warning] = 'Invalid email or password!'
       redirect_to '/login'
@@ -31,6 +31,5 @@ class SessionsController < ApplicationController
   end
 
   def signup
-
   end
 end
