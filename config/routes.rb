@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get '/questionnaires' => 'questionnaires#new'
+
   get '/' => 'home_pages#index'
 
   get '/home' => 'home_pages#index'

@@ -7,7 +7,6 @@ class ClientsController < ApplicationController
       end
     end
     render 'index.html.erb'
-    # @clients = Client.all
   end
 
   def show
@@ -47,7 +46,7 @@ class ClientsController < ApplicationController
       name: params[:name],
       email: params[:email],
       phone: params[:phone],
-      risk_tolerance: params[:risk_tolerance]    
+      risk_tolerance: params[:risk_tolerance]
     )
       flash[:info] = "You just updated this client"
       redirect_to "/clients/#{@client.id}"
