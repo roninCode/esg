@@ -2,7 +2,9 @@ class InvitationsController < ApplicationController
   def index
     @invitations = []
     Invitation.all.each do |invitation|
-      if invitation.advisor_id == current_advisor.id
+      if current_advisor && invitation.advisor_id == current_advisor.id
+        @invitations << invitation
+      elsif current_client && invitation.client_id == current_client.id
         @invitations << invitation
       end
     end

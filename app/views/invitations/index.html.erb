@@ -1,11 +1,24 @@
 <h3>All Invitations</h3>
 
 <% @invitations.each do |invitation| %>
-  <p>Advisor_id: <%= invitation.advisor_id %></p>
-  <p>Client_id: <%= invitation.client_id %></p>
-  <p>Status: <%= invitation.status %></p>
-  <a href="/invitations/<%= invitation.id %>/edit">Edit/Delete this Invitation</a>
+  <% if current_advisor %>
+    <p>Client Name: <%= (Client.find_by(id: invitation.client_id)).name %></p>
+    <p>Client_id: <%= invitation.client_id %></p>    
+    <p>Status: <%= invitation.status %></p>
+    <a href="/invitations/<%= invitation.id %>/edit">Edit/Delete this Invitation</a>
+  <% elsif current_client %>
+    <p>Advisor Name: <%= (Advisor.find_by(id: invitation.advisor_id)).name %></p>
+    <p>Advisor_id: <%= invitation.advisor_id %></p>
+    <p>Status: <%= invitation.status %></p>
+    <% if invitation.status.downcase == "pending" %>
+      <a href="#">Accept this Invitation</a>
+    <% end %>
+  <% end %>
+  
   <hr>
 <% end %>
 
-<a href="/invitations/new"><h4>Create a New Invitation</h4></a>
+<% if current_advisor %>
+  <a href="/invitations/new"><h4>Create a New Invitation</h4></a>
+  <h3>Your Advisor ID#:<%= current_advisor.id %></h3>
+<% end %>

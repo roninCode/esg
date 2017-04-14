@@ -5,9 +5,6 @@ class ClientsController < ApplicationController
       if invit.advisor_id == current_advisor.id
         @advisor_clients << Client.find("#{invit.client_id}")
       end
-      #link to invite other clients to their page 
-      #redirects people to the client sign up 
-      #with the advisor id already generated
     end
     render 'index.html.erb'
   end
