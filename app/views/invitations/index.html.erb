@@ -22,3 +22,7 @@
   <a href="/invitations/new"><h4>Create a New Invitation</h4></a>
   <h3>Your Advisor ID#:<%= current_advisor.id %></h3>
 <% end %>
+
+<% if current_client %>
+  <h3>Your Client ID#: <%= current_client.id %></h3>
+<% end %>
