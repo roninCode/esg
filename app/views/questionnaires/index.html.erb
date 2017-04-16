@@ -1,0 +1,7 @@
+<h3>Here are all the Questionnaires</h3>
+<% @questionnaires.each do |questionnaire| %>
+  <p>Questionnare ID: <%= questionnaire.id %></p>
+  <p><%= (questionnaire.question_1 + questionnaire.question_2 + questionnaire.question_3 + questionnaire.question_4 + questionnaire.question_5 + questionnaire.question_6 + questionnaire.question_7 + questionnaire.question_8 + questionnaire.question_9 + questionnaire.question_10 + questionnaire.question_11).to_f / 52.0 * 100  %></p>
+  <p>Average: <%= questionnaire.average %></p>
+  <hr>
+<% end %>
