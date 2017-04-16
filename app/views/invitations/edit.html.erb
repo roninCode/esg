@@ -10,18 +10,23 @@
     <div>
       <input type="text" name="client_id" value="<%= @invitation.client_id %>">    
     </div>
-
+  <br>
+  <h4>Current Status: <%= @invitation.status %></h4>
   <label for="status"> Status </label>
     <div>
-      <input type="text" name="status" value="<%= @invitation.status %>">    
+      <input type="radio" name="status" value="pending" checked> Pending<br>
+      <input type="radio" name="status" value="accepted"> Accepted<br>
+      <input type="radio" name="status" value="expired"> Expired   
     </div>
+    <br>    
 
     <div>
       <input type="submit">
     </div>
 <% end %>
 
-
+<hr>
+<br><br>
 <h4>Want to delete this Invitation?</h4>
 <%= form_tag "/invitations/#{@invitation.id}", method: :delete do %>
     <input type="submit" value="This will delete this Invitation">
