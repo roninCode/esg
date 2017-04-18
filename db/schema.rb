@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417234038) do
+ActiveRecord::Schema.define(version: 20170418221237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,11 +77,12 @@ ActiveRecord::Schema.define(version: 20170417234038) do
     t.string   "name"
     t.integer  "risk_level"
     t.text     "description"
-    t.string   "allocations"
     t.string   "companies"
     t.string   "etfs"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "stocks"
+    t.integer  "bonds"
   end
 
 end

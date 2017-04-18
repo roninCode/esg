@@ -18,7 +18,8 @@ class RiskModelsController < ApplicationController
       name: params[:name],
       risk_level: params[:risk_level],
       description: params[:description],
-      allocations: params[:allocations],
+      stocks: params[:stocks],
+      bonds: params[:bonds],
       companies: params[:companies],
       etfs: params[:etfs]
     )
@@ -37,7 +38,8 @@ class RiskModelsController < ApplicationController
       name: params[:name],
       risk_level: params[:risk_level],
       description: params[:description],
-      allocations: params[:allocations],
+      stocks: params[:stocks],
+      bonds: params[:bonds],
       companies: params[:companies],
       etfs: params[:etfs]
     )
