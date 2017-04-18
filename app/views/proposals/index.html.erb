@@ -1,18 +1,19 @@
 <h3>All the Proposals</h3>
 
-<% @proposals.each do |proposal| %>
-  <% if current_advisor && proposal.advisor_id == current_advisor.id %>
-    <p>Proposal ID:<%= proposal.id %></p>
-    <p>Client ID:<%= proposal.client_id %></p>
-    <p>Risk Model ID:<%= proposal.risk_model_id %></p>
-    <p>Status:<%= proposal.status %></p>
-    <a href="/proposals/<%= proposal.id %>/edit">Edit/Delete this Proposal</a>
-    <hr>
-  <% elsif current_client && proposal.client_id == current_client.id %> 
-    <p>Proposal ID:<%= proposal.id %></p>
-    <p>Advisor ID:<%= proposal.advisor_id %></p>
-    <p>Risk Model ID:<%= proposal.risk_model_id %></p>
-    <p>Status:<%= proposal.status %></p>
-    <hr>
-  <% end %>
-<% end %>
+<div class="container-fluid">
+  
+  <% @proposals.each_slice(3) do |proposal3| %>
+    <div class="row">
+      <% proposal3.each do |proposal| %>
+        <div class="col-md-4 well">
+          <p>Proposal ID:<%= proposal.id %></p>
+          <p>Client ID:<%= proposal.client_id %></p>
+          <p>Advisor ID:<%= proposal.advisor_id %></p>
+          <p>Risk Model ID:<%= proposal.risk_model_id %></p>
+          <p>Status:<%= proposal.status %></p>
+          <a href="/proposals/<%= proposal.id %>/edit">Edit/Delete this Proposal</a>
+        </div>
+      <% end %> <!--Ends prop3.each -->
+    </div> <!--Ends row div -->   
+  <% end %> <!--Ends @proposals.each-->
+</div>
