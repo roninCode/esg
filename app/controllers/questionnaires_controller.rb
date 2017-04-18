@@ -12,6 +12,7 @@ class QuestionnairesController < ApplicationController
   def create
     questionnaire = Questionnaire.new(
       client_id: current_client.id,
+      advisor_id: params[:advisor_id],
       question_1: params[:question_1],
       question_2: params[:question_2],
       question_3: params[:question_3],
@@ -27,6 +28,26 @@ class QuestionnairesController < ApplicationController
     )
     if questionnaire.save
       flash[:success] = "You successfully submitted your questionnaire"
+      risk_level = 0
+        if questionnaire[:average] < 25
+          risk_level = 1
+        elsif questionnaire[:average] < 50
+          risk_level = 2
+        elsif questionnaire[:average] < 70
+          risk_level = 3
+        elsif questionnaire[:average] < 90
+          risk_level = 4
+        else
+          risk_level = 5
+        end
+      proposal = Proposal.new(
+        client_id: current_client.id,
+        advisor_id: params[:advisor_id],
+        risk_model_id: risk_level,
+        status: "pending"
+      )
+      proposal.save
+    
       redirect_to '/questionnaires'
     else
       flash[:danger] = "Questionnaire was NOT submitted"

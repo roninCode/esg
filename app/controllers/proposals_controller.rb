@@ -1,13 +1,6 @@
 class ProposalsController < ApplicationController
   def index
-    @proposals = []
-    Proposal.all.each do |proposal|
-      if current_client && proposal.client_id == current_client.id
-        @proposals << Proposal.find_by(client_id: "#{current_client.id}")
-      elsif current_advisor && proposal.advisor_id == current_advisor.id
-        @proposals << Proposal.find_by(advisor_id: "#{current_advisor.id}")
-      end
-    end
+    @proposals = Proposal.all
     render 'index.html.erb'
   end
 
@@ -25,7 +18,6 @@ class ProposalsController < ApplicationController
     risk_model_id: params['risk_model_id'],
     advisor_id: params['advisor_id'],
     client_id: params['client_id'],
-    invitation_id: params['invitation_id'],
     status: params['status']
     )
     if @proposal.save
@@ -45,7 +37,6 @@ class ProposalsController < ApplicationController
       risk_model_id: params['risk_model_id'],
       advisor_id: params['advisor_id'],
       client_id: params['client_id'],
-      invitation_id: params['invitation_id'],
       status: params['status']
     )
     flash[:info] = "You just updated this Proposal"

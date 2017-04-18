@@ -1,6 +1,12 @@
 <div class="container">
   <h2>Client Questionnaire</h2>
   <%= form_tag("/questionnaires", method: "post") do %>
+
+    <p>Please enter the ID of your EthiCapital Advisor:</p>
+      <div>
+        <input type="text" name="advisor_id">
+      </div>
+      <br>
     <p> 1. I plan to begin taking money from my 
     investments in . . . </p>
       <div class="radio">
