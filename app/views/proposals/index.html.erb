@@ -6,6 +6,7 @@
     <div class="row">
       <% proposal3.each do |proposal| %>
         <div class="col-md-4 well">
+          <a href='/proposals/<%= proposal.id %>'>View this Proposal</a>
           <p>Proposal ID:<%= proposal.id %></p>
           <p>Client ID:<%= proposal.client_id %></p>
           <p>Advisor ID:<%= proposal.advisor_id %></p>

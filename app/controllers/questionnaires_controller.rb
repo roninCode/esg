@@ -1,7 +1,12 @@
 class QuestionnairesController < ApplicationController
   
   def index
-    @questionnaires = Questionnaire.all
+    @questionnaires = []
+    Questionnaire.all.each do |ques|
+      if (current_client && ques.client_id == current_client.id) || (current_advisor && ques.advisor_id == current_advisor.id)
+        @questionnaires << ques
+      end
+    end
     render 'index.html'
   end
 
