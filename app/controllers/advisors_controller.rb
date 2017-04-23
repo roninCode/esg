@@ -64,4 +64,10 @@ class AdvisorsController < ApplicationController
     end
     redirect_to '/advisors'
   end
+
+private
+  def advisor_params
+    params.require(:advisor).permit(:name, :logo)
+  end
+
 end

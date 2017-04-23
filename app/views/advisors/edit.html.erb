@@ -1,11 +1,11 @@
-<%= @advisor.name %>
-
 <%= form_tag("/advisors/#{@advisor.id}", method: "patch") do %>
-  <div>
+
+  <label for="name">Name</label>
+    <div>
       <input type="text" name="name" value="<%= @advisor.name %>">    
     </div>
   
-  <label for="company"> Company </label>
+  <label for="company">Company</label>
     <div>
       <input type="text" name="company" value="<%= @advisor.company %>">    
     </div>
@@ -22,9 +22,10 @@
 
   <label for="logo"> Logo </label>
     <div>
-      <input type="text" name="logo" value="<%= @advisor.logo %>">    
+      <%= file_field_tag "logo" %>
+      <!-- <input type="text" name="logo" value="<%= @advisor.logo %>">   -->  
     </div>
-
+<br>
     <div>
       <input type="submit" value="Edit this Advisor">
     </div>

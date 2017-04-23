@@ -1,0 +1,7 @@
+<% if current_advisor %>
+  <%= current_advisor.name %>
+<% elsif current_client %>
+  <%= current_client.name %>
+<% end %>
+
+<p>Risk Model: <%= @proposal.risk_model_id %></p>

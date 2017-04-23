@@ -4,5 +4,8 @@ class Advisor < ApplicationRecord
   has_many :proposals
   has_many :clients, through: :proposals
   has_many :invitations, through: :proposals
+  
+  mount_uploader :logo, LogoUploader
+  validates :name, presence: true
 end
  

@@ -13,7 +13,15 @@ class ProposalsController < ApplicationController
 
   def show
     @proposal = Proposal.find_by(id: params[:id])
-    render 'show.html.erb'
+    
+    respond_to do |format|
+      format.html      
+      format.pdf do
+        render pdf: "ethicapital_proposal",
+               template: "proposals/show.pdf.erb",
+               locals: {:proposal => @proposal}
+      end
+    end
   end
 
   def new

@@ -6,6 +6,4 @@
 <p>Risk Model ID:<%= @proposal.risk_model_id %></p>
 <p>Status:<%= @proposal.status %></p>
 
-<hr>
-<p>HTML TO PDF below...coming soon I hope</p>
-<%= current_advisor.to_pdf %>
+<%= link_to "View This Proposal as a PDF", format: :pdf %>

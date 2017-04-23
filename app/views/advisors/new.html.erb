@@ -1,4 +1,4 @@
-<%= form_tag("/advisors", method: "post") do %>
+<%= form_tag("/advisors", enctype: "multipart/form-data", method: "post") do %>
   <label for="name"> Name </label>
   <div>
       <input type="text" name="name" value="<%= @advisor.name %>">    
@@ -19,10 +19,12 @@
       <input type="email" name="email" value="<%= @advisor.email %>">    
     </div>
 
-  <label for="logo"> Logo </label>
-    <div>
-      <input type="text" name="logo" value="<%= @advisor.logo %>">    
-    </div>
+<!-- trying to use carrierwave to upload logo -->  
+  <%= label_tag(:logo) %>
+    <%= file_field_tag(:logo) %>
+   
+<!-- trying to use carrierwave to upload logo -->  
+
 
   <label for="password"> Password </label>
     <div>

@@ -3,4 +3,8 @@
 <p>Email: <%= @advisor.email %></p> 
 <p>Logo: <%= @advisor.logo %></p> 
 
+<div class="advisor_logo"><%= image_tag(@advisor.logo) %></div>
+
+
+
 <p><a href="/advisors/<%= @advisor.id %>/edit">Edit/Delete this Advisor</a></p>

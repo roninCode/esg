@@ -11,13 +11,13 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_client
 
-  def to_pdf
-    @to_pdf = respond_to do |format|
-      format.html
-      format.pdf do
-        render pdf: "file_name" # Excluding ".pdf" extension.
-      end
-    end
-  end
-  helper_method :to_pdf
+  # def to_pdf
+  #   @to_pdf = respond_to do |format|
+  #     format.html
+  #     format.pdf do
+  #       render pdf: "file_name" # Excluding ".pdf" extension.
+  #     end
+  #   end
+  # end
+  # helper_method :to_pdf
 end

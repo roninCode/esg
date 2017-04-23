@@ -10,6 +10,7 @@
           <p>Phone: <%= advisor.phone %></p> 
           <p>email: <%= advisor.email %></p>  
           <a href="/advisors/<%= advisor.id %>/edit">Edit/Delete this Advisor</a>
+          <div class="advisor_logo"><%= image_tag(advisor.logo) %></div>
         </div>
       <% end %>
     </div>
