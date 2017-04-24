@@ -13,6 +13,8 @@ class ProposalsController < ApplicationController
 
   def show
     @proposal = Proposal.find_by(id: params[:id])
+    @advisor = Advisor.find_by(id: @proposal.advisor_id)
+    @client = Client.find_by(id: @proposal.client_id)
     
     respond_to do |format|
       format.html      

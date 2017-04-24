@@ -1,7 +1,72 @@
-<% if current_advisor %>
-  <%= current_advisor.name %>
-<% elsif current_client %>
-  <%= current_client.name %>
-<% end %>
 
-<p>Risk Model: <%= @proposal.risk_model_id %></p>
+<div><%= image_tag image_url(@advisor.logo) %></div>
+
+<h3>Client Information</h3>
+<div> 
+  <h5>Client Name</h5> 
+  <p><%= @client.name %></p>
+</div>
+<div>
+  <h5>Client Address</h5>
+  <p>Add client address to client model</p>
+</div>
+<div>
+  <h5>Client Email</h5>
+  <p><%= current_client.email %></p>
+</div>
+<div>
+  <h5>Recommended Portfolio</h5>
+  <p>Risk Model:<%= @proposal.risk_model_id %></p>
+</div>
+<div>
+  <h5>Approximate Account Size</h5>
+  <p>Add how much a client wants to have?</p>
+</div>
+<div>
+  <h5>Account Type</h5>
+  <p>Add type of account</p>
+</div>
+<div>
+  <h5>Taxable Account</h5>
+  <p>Well is it a taxable account?</p>
+</div>
+
+<hr>
+<h3>Advisor Information</h3>
+
+<div>
+  <h5>Advisor Name</h5>
+  <p><%= @advisor.name %></p>
+</div>
+
+<div>
+  <h5>Firm Name</h5>
+  <p><%= @advisor.company %></p>
+</div>
+
+<div>
+  <h5>Advisor Address</h5>
+  <p>Add Advisor Address</p>
+</div>
+
+<div>
+  <h5>Advisor Phone</h5>
+  <p><%= @advisor.phone %></p>
+</div>
+
+<div>
+  <h5>Advisor Email</h5>
+  <p><%= @advisor.email %></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
