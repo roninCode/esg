@@ -2,11 +2,15 @@
   <h2>Client Questionnaire</h2>
   <%= form_tag("/questionnaires", method: "post") do %>
 
-    <p>Please enter the ID of your EthiCapital Advisor:</p>
-      <div>
-        <input type="text" name="advisor_id">
-      </div>
-      <br>
+    <p>Please Select your EthiCapital Advisor:</p>
+      <select name="advisor_id">
+        <% @advisors.each do |advisor| %>
+          <option value="<%= advisor.id %>"><%= advisor.name %></option>
+        <% end %>
+      </select>
+
+    <hr>
+
     <p> 1. I plan to begin taking money from my 
     investments in . . . </p>
       <div class="radio">

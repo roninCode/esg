@@ -11,6 +11,14 @@ class QuestionnairesController < ApplicationController
   end
 
   def new
+    @advisors = []
+    Invitation.all.each do |invitation|
+      if current_client && invitation.client_id == current_client.id
+        advisor = Advisor.find_by(id: invitation.advisor_id)
+        @advisors << advisor
+      end 
+    end
+    # find all advisors belonging to a client via invitations
     render 'new.html.erb'
   end
 
