@@ -12,7 +12,9 @@
           <p>Advisor ID:<%= proposal.advisor_id %></p>
           <p>Risk Model ID:<%= proposal.risk_model_id %></p>
           <p>Status:<%= proposal.status %></p>
+        <% if current_advisor %>  
           <a href="/proposals/<%= proposal.id %>/edit">Edit/Delete this Proposal</a>
+        <% end %>
         </div>
       <% end %> <!--Ends prop3.each -->
     </div> <!--Ends row div -->   
