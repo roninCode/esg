@@ -22,12 +22,22 @@ class InvitationsController < ApplicationController
 
   def create
     invitation = Invitation.new(
-      advisor_id: params['advisor_id'],
+      advisor_id: current_advisor.id,
       client_id: params['client_id'],
-      status: params['status']
+      status: "pending"
     )
-    if invitation.save
-      flash[:info] = "You created a new invitation"
+
+    is_client = false
+    Client.all.each do |client|
+      if client.id == params['client_id'].to_i
+        is_client = true
+      end
+    end
+    if is_client && invitation.save
+      this_client = Client.find_by(id: params['client_id'])
+      flash[:info] = "You sent an invitation to #{this_client.name}"
+    else
+      flash[:danger] = "This client does not exist."
     end
     redirect_to '/invitations'
   end
