@@ -13,18 +13,14 @@
    
     <% if invitation.status.downcase == "pending" %>
       <%= form_tag("/invitations/#{invitation.id}", method: "patch") do %>
-      <label for="status"> Accept This Invitation </label>
-         <div class="hidden">
+        <div class="hidden">
           <input type="text" name="advisor_id" value="<%= invitation.advisor_id %>">
           <input type="text" name="client_id" value="<%= invitation.client_id %>">
-         </div>
-  
-         <div>
-          <input type="submit" name="status" value="accepted">    
         </div>
-
-        <% end %>
-      <a href="#">Accept this Invitation</a>
+        <div>
+          <button type="submit"><input class="hidden" type="text" name="status" value="accepted">Accept this Invitation</button>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
   
