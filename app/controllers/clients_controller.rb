@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
   def index
     @advisor_clients = []
     Invitation.all.each do |invit|
-      if invit.advisor_id == current_advisor.id
+      if invit.advisor_id == current_advisor.id && invit.status == "accepted"
         @advisor_clients << Client.find("#{invit.client_id}")
       end
     end

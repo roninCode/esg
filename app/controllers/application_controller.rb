@@ -11,13 +11,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_client
 
-  # def to_pdf
-  #   @to_pdf = respond_to do |format|
-  #     format.html
-  #     format.pdf do
-  #       render pdf: "file_name" # Excluding ".pdf" extension.
-  #     end
-  #   end
+  # def invitation_accepted 
+  #   @accepted_by_client = Invitation.where(status: "accepted")
   # end
-  # helper_method :to_pdf
+  # helper_method :accepted_by_client
 end
