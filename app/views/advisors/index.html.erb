@@ -21,15 +21,15 @@
                 <button type="submit"><input class="hidden" type="text" name="status" value="accepted">Accept this Invitation</button>
               </div>
             <% end %>
-            <br>
-
-            <%= form_tag("/invitations/#{@invitation.where(advisor_id: advisor.id)[0].id}", method: "delete") do %>
-              <button type="submit">Delete this Invitation</button>
-            <% end %>
+            <br>   
           <% end %>     
-         
           <br>
 
+          <%= form_tag("/invitations/#{@invitation.where(advisor_id: advisor.id)[0].id}", method: "delete") do %>
+            <button type="submit">Remove this Advisor</button>
+          <% end %>
+          
+          <br>
           <div class="advisor_logo"><%= image_tag(advisor.logo) %></div>
         </div>
       <% end %>
