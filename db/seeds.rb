@@ -1,31 +1,39 @@
 Advisor.create!([
-  {name: "Samantha Bills", company: "Money Tower", phone: "9876543456", email: "sam@tower", password_digest: "$2a$10$ff33Aebim1kD6A4egErfF.ef86OVrnfpGXpC1Gr2pthBtvq8Sag2W", logo: ""},
-  {name: "Karen Capital", company: "Capitalization Station", phone: "23456789", email: "Karen@lot", password_digest: "$2a$10$Vwka4E0xbx6pubw/KBZ9H.0YEwf6FMzOEmmXWy329MD8tcdXULlvy", logo: ""},
-  {name: "Jessica Alba", company: "HoneyPot", phone: "66666666", email: "honey@sin", password_digest: "$2a$10$uwk7CyMIqgeDg6UCpYP/gOeTq4LvFHPuiCPlRb5vYEDo5GAcF/eeG", logo: ""},
-  {name: "Jamie Andrew Mackillop", company: "JAMStars", phone: "567898765", email: "j@m", password_digest: "$2a$10$Mc7F5hcPG9cI32ZVVJV2NOBU/NetHmFn28NQT1Ic3uqT5ijW6bhFu", logo: ""},
-  {name: "mac ian mac", company: "firstassent", phone: "0897867564", email: "mac@mac", password_digest: "$2a$10$oPWAFhp7Kn9hVwUh0/9zD.OCpPSsNXPmXgqexSebJhw9wDBVhTh6G", logo: ""},
-  {name: "cvzvcx", company: "cxzvcxvcxvvxcz", phone: "1233443", email: "random@random", password_digest: "$2a$10$s7h7zvEhy6JNL3tyG03PUeAphG4Ue6ycdisGGo1oRiOQHisypHq4a", logo: ""},
-  {name: "Judith Mas", company: "Cut your head off", phone: "4567890", email: "judge@judy", password_digest: "$2a$10$Wxax7S0UE7vJ1O.ypT0bs.wC12Nl5CQ0Or9IfVoqjk9RYAXH7KFay", logo: ""}
+  {name: "jamie", company: "Makes a Lot of Money", phone: "87656", email: "j@m", password_digest: "$2a$10$MpBjEd9pDhUJ7HxZfv7ONO8nuu5SDfcwAKPPEH3riSyzhRQd3YCWG", logo: "pb_hero.jpg"},
+  {name: "Julius Cesaer", company: "Dressing", phone: "6754578", email: "j@c", password_digest: "$2a$10$GKiI4RRBt5wmzo6fep8xNOBQAptH4VRGLVxF3S8JaMmBBNSndjwNC", logo: "salad.jpg"},
+  {name: "Brian", company: "is Rad", phone: "89765645", email: "b@r", password_digest: "$2a$10$Yg31WCruEfiKCpZ7M6RH6unkuzTKHuLYH9lT05h/v6BeKwuedORO.", logo: "pb_hero.jpg"},
+  {name: "marlon", company: "brando", phone: "567987675", email: "mar@b", password_digest: "$2a$10$NqiceMWAQKgKvwsc33lQce..c/.wgnG2pFi2HBBmQiZeTTgdt60vK", logo: "salad.jpg"}
 ])
 Client.create!([
-  {name: "Martha Tetas", email: "marth@tet", phone: "89767564", risk_tolerance: 2, password_digest: "$2a$10$CwPFwAD3T1ib.q7E9sbDoeouQTE7IeuFcr9JW4xcBDx0axo1nvilG"},
-  {name: "Tina Turner", email: "tina@time", phone: "86756798", risk_tolerance: 1, password_digest: "$2a$10$7QYQob/wgHfCei5gi.SVquWUIZe27xiL/QCxcicBYF7EAvh3p4/W6"},
-  {name: "Chrissy Casey", email: "chris@case", phone: "08978654", risk_tolerance: 3, password_digest: "$2a$10$sFU8A55BdKuGthPQSNpnmuu4KPPGxhE8FunstNm9elkhiOnSf3c.2"},
-  {name: "hotty potty", email: "hot@pot", phone: "78654678", risk_tolerance: 3, password_digest: "$2a$10$VnHTqlN1adINSXEff0j2xeuWrHcu5KA9g0VE6hYt1hKMR3sVRDwWa"}
+  {name: "Mac", email: "m@m", phone: "456789", risk_tolerance: nil, password_digest: "$2a$10$Tgxlga6Fl633L8egj5Bf3e5lYvKfhtvXVldPPBHvwANWwak5udNQ6"},
+  {name: "Judas", email: "judas@j", phone: "8976756", risk_tolerance: nil, password_digest: "$2a$10$Yj2GEVyS8jxuCPsOlKenTe5WniP5QqW3eO8ZkQg.RviyofGeDOyma"},
+  {name: "judth masoni", email: "j@j", phone: "9786758", risk_tolerance: nil, password_digest: "$2a$10$giimAW2cfKHJW1Bwn4uM8uFX5fsVXZqvNvtEu9FemJRM8e0HICEVe"}
 ])
 Invitation.create!([
-  {expiration: nil, advisor_id: 1, client_id: 4, status: "Pending"},
-  {expiration: nil, advisor_id: 1, client_id: 3, status: "Pending"},
-  {expiration: nil, advisor_id: 2, client_id: 3, status: "Pending"}
+  {expiration: nil, advisor_id: 19, client_id: 15, status: "accepted"},
+  {expiration: nil, advisor_id: 22, client_id: 15, status: "accepted"},
+  {expiration: nil, advisor_id: 19, client_id: 17, status: "accepted"},
+  {expiration: nil, advisor_id: 21, client_id: 17, status: "pending"},
+  {expiration: nil, advisor_id: 20, client_id: 16, status: "pending"}
 ])
 Proposal.create!([
-  {risk_model_id: 1, client_id: 5, advisor_id: 5, invitation_id: 1, status: "does this work?!?!"},
-  {risk_model_id: 2, client_id: 6, advisor_id: 6, invitation_id: 1, status: "duh duh duh"},
-  {risk_model_id: 4, client_id: 7, advisor_id: 7, invitation_id: 3, status: "Pendddddingg please"}
+  {risk_model_id: 1, client_id: 15, advisor_id: 20, status: "pending", pdf: nil},
+  {risk_model_id: 1, client_id: 15, advisor_id: 20, status: "pending", pdf: nil},
+  {risk_model_id: 1, client_id: 15, advisor_id: 19, status: "pending", pdf: nil},
+  {risk_model_id: 3, client_id: 17, advisor_id: 21, status: "accepted", pdf: nil},
+  {risk_model_id: 1, client_id: 17, advisor_id: 19, status: "signed", pdf: "salad.jpg"}
+])
+Questionnaire.create!([
+  {client_id: 15, question_1: 1, question_2: 1, question_3: 1, question_4: 1, question_5: 1, question_6: 1, question_7: 1, question_8: 1, question_9: 1, question_10: 1, question_11: 1, average: "21.1538461538462", advisor_id: 20},
+  {client_id: 15, question_1: 1, question_2: 1, question_3: 1, question_4: 1, question_5: 1, question_6: 1, question_7: 1, question_8: 1, question_9: 1, question_10: 1, question_11: 1, average: "21.1538461538462", advisor_id: 20},
+  {client_id: 15, question_1: 1, question_2: 1, question_3: 1, question_4: 1, question_5: 1, question_6: 1, question_7: 1, question_8: 1, question_9: 1, question_10: 1, question_11: 1, average: "21.1538461538462", advisor_id: 19},
+  {client_id: 17, question_1: 1, question_2: 1, question_3: 1, question_4: 1, question_5: 1, question_6: 1, question_7: 1, question_8: 1, question_9: 1, question_10: 1, question_11: 1, average: "21.1538461538462", advisor_id: 19},
+  {client_id: 17, question_1: 1, question_2: 1, question_3: 1, question_4: 3, question_5: 5, question_6: 1, question_7: 3, question_8: 4, question_9: 3, question_10: 5, question_11: 3, average: "57.6923076923077", advisor_id: 21}
 ])
 RiskModel.create!([
-  {name: "Medium Risk", risk_level: 2, description: "This model accepts moderate risk", allocations: "60% bonds, 40% stocks", companies: nil, etfs: nil},
-  {name: "Medium-High Risk", risk_level: 3, description: "This model is risky", allocations: "40% bonds, 60% stocks", companies: nil, etfs: nil},
-  {name: "High Risk", risk_level: 4, description: "This model is very risky---only for long term", allocations: "20% bonds, 80% stocks", companies: nil, etfs: nil},
-  {name: "Low Risk", risk_level: 1, description: "This the lowest possible risk", allocations: "80% bonds, 20% stocks", companies: "", etfs: ""}
+  {name: "Ultimate Risk", risk_level: 5, description: "This is the most risky", companies: nil, etfs: nil, stocks: 80, bonds: 20},
+  {name: "Medium-High Risk", risk_level: 3, description: "This model is risky", companies: nil, etfs: nil, stocks: 40, bonds: 60},
+  {name: "Medium Risk", risk_level: 2, description: "This model accepts moderate risk", companies: nil, etfs: nil, stocks: 20, bonds: 80},
+  {name: "High Risk", risk_level: 4, description: "This model is very risky---only for long term", companies: nil, etfs: nil, stocks: 60, bonds: 40},
+  {name: "Lowest Risk", risk_level: 1, description: "This the lowest possible risk", companies: "", etfs: "", stocks: 0, bonds: 100}
 ])

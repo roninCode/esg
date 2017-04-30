@@ -6,7 +6,11 @@
     <div class="row">
       <% proposal3.each do |proposal| %>
         <div class="col-md-4 well">
-          <a href='/proposals/<%= proposal.id %>'>View this Proposal</a>
+          <% if proposal.status == "signed" %>
+            <a href='/proposals/<%= proposal.id %>'>View this Signed Proposal</a>
+          <% else %>
+            <a href='/proposals/<%= proposal.id %>'>View this Proposal</a>
+          <% end %>
           <p>Proposal ID:<%= proposal.id %></p>
           <p>Client ID:<%= proposal.client_id %></p>
           <p>Advisor ID:<%= proposal.advisor_id %></p>
@@ -17,7 +21,6 @@
         <% end %>
         <% if current_client && proposal.status == "pending" %>
           <button>Status should be pending</button>
-
         <% end %>
         </div>
       <% end %> <!--Ends prop3.each -->
