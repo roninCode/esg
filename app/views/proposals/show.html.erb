@@ -8,5 +8,12 @@
 
 <%= link_to "View This Proposal as a PDF", format: :pdf %>
 
+<a href='/proposals/<%= @proposal.id %>/edit'>Upload your Signed PDF</a>
+
+<br>
+<h1>There should be a pdf below of signed proposal</h1>
+  <div><%= image_tag(@proposal.pdf) %></div>
+  <!-- currently not working ABOVE -->
 <br>
 <div><%= image_tag(@advisor.logo) %></div>
+ %>

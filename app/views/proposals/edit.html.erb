@@ -1,6 +1,6 @@
 <h3>Proposal ID: <%= @proposal.id %> </h3>
 
-<%= form_tag("/proposals/#{@proposal.id}", method: "patch") do %>
+<%= form_tag("/proposals/#{@proposal.id}", enctype: "multipart/form-data", method: "patch") do %>
   <label for=risk_model_id>Risk Model ID</label>
   <div>
     <input type="text" name="risk_model_id" value="<%= @proposal.risk_model_id %>">    
@@ -20,6 +20,9 @@
     <div>
       <input type="text" name="status" value="<%= @proposal.status %>">    
     </div>
+
+    <%= label_tag(:pdf) %>
+    <%= file_field_tag(:pdf) %>
 
     <div>
       <input type="submit" value="Edit this Proposal">

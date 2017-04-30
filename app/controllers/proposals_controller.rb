@@ -35,7 +35,8 @@ class ProposalsController < ApplicationController
     risk_model_id: params['risk_model_id'],
     advisor_id: params['advisor_id'],
     client_id: params['client_id'],
-    status: params['status']
+    status: params['status'],
+    pdf: params['pdf']
     )
     if @proposal.save
       flash[:info] = "You just created a new Proposal"
@@ -54,10 +55,16 @@ class ProposalsController < ApplicationController
       risk_model_id: params['risk_model_id'],
       advisor_id: params['advisor_id'],
       client_id: params['client_id'],
-      status: params['status']
+      status: params['status'],
+      pdf: params['pdf']
     )
-    flash[:info] = "You just updated this Proposal"
-    redirect_to "/proposals/#{@proposal.id}"
+      if @proposal.pdf != "" && @proposal.status == "pending"
+        @proposal.update(
+          status: "signed"
+        )
+      end
+      flash[:info] = "You just updated this Proposal"
+      redirect_to "/proposals/#{@proposal.id}"
     else
       render 'edit.html.erb'
     end

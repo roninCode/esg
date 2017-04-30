@@ -15,6 +15,10 @@
         <% if current_advisor %>  
           <a href="/proposals/<%= proposal.id %>/edit">Edit/Delete this Proposal</a>
         <% end %>
+        <% if current_client && proposal.status == "pending" %>
+          <button>Status should be pending</button>
+
+        <% end %>
         </div>
       <% end %> <!--Ends prop3.each -->
     </div> <!--Ends row div -->   
