@@ -8,7 +8,12 @@
           <p>ID: <%= advisor.id %></p>
           <p><%= advisor.name %> from <%= advisor.company %></p>
           <p>Phone: <%= advisor.phone %></p> 
-          <p>email: <%= advisor.email %></p>  
+          <p>email: <%= advisor.email %></p>
+          
+          <%= Invitation.where(advisor_id: advisor.id).where(client_id: current_client.id).each do |invit| %>
+            <p>invit</p>
+          <% end %>
+          <br>
           <a href="/advisors/<%= advisor.id %>/edit">Edit/Delete this Advisor</a>
           <div class="advisor_logo"><%= image_tag(advisor.logo) %></div>
         </div>
