@@ -6,6 +6,7 @@ class AdvisorsController < ApplicationController
         @client_advisors << Advisor.find("#{invit.advisor_id}")
       end
     end
+    @invitation = Invitation.where(client_id: current_client.id)
     render 'index.html.erb'
   end
 
