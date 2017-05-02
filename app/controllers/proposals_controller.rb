@@ -62,13 +62,13 @@ class ProposalsController < ApplicationController
       status: params['status'],
       pdf: params['pdf']
     )
-      if @proposal.pdf != "" && @proposal.status == "pending"
+      if @proposal.pdf != "" && @proposal.status != "signed"
         @proposal.update(
           status: "signed"
         )
       end
-      flash[:info] = "You just updated this Proposal"
-      redirect_to "/proposals/#{@proposal.id}"
+      flash[:info] = "You just uploaded your proposal!"
+      redirect_to "/proposals"
     else
       render 'edit.html.erb'
     end
