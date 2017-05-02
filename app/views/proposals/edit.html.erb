@@ -1,32 +1,24 @@
 <h3>Proposal ID: <%= @proposal.id %> </h3>
 
 <%= form_tag("/proposals/#{@proposal.id}", enctype: "multipart/form-data", method: "patch") do %>
-  <label for=risk_model_id>Risk Model ID</label>
+ 
   <div>
-    <input type="text" name="risk_model_id" value="<%= @proposal.risk_model_id %>">    
+    <input class="hidden" type="text" name="risk_model_id" value="<%= @proposal.risk_model_id %>">    
+
+      <input class="hidden" type="text" name="advisor_id" value="<%= @proposal.advisor_id %>">    
+
+      <input class="hidden" type="text" name="client_id" value="<%= @proposal.client_id %>">    
+
+      <input class="hidden" type="text" name="status" value="<%= @proposal.status %>">    
   </div>
-  
-  <label for="advisor_id"> Advisor ID </label>
-    <div>
-      <input type="text" name="advisor_id" value="<%= @proposal.advisor_id %>">    
-    </div>
 
-  <label for="client_id"> Client ID </label>
-    <div>
-      <input type="text" name="client_id" value="<%= @proposal.client_id %>">    
-    </div>
-
-  <label for="status"> Status </label>
-    <div>
-      <input type="text" name="status" value="<%= @proposal.status %>">    
-    </div>
-
+  <% if current_client %>
     <%= label_tag(:pdf) %>
     <%= file_field_tag(:pdf) %>
-
     <div>
-      <input type="submit" value="Edit this Proposal">
+      <input type="submit" value="Upload your Signed Proposal">
     </div>
+  <% end %>
 <% end %>
 
 <h4>Want to Delete this Proposal?</h4>

@@ -7,6 +7,7 @@
 <p>Status:<%= @proposal.status %></p>
 
 <%= link_to "View This Proposal as a PDF", format: :pdf %>
+
 <br><br>
 <% if @proposal.status != "signed" %>
   <a href='/proposals/<%= @proposal.id %>/edit'>Upload your Signed PDF</a>
@@ -14,3 +15,6 @@
 <br><br>
 
 <div><%= image_tag(@advisor.logo) %></div>
+
+
+<div><%= link_to "Really see this PDF", "/public/uploads/proposal/pdf/#{@proposal.id}" %></div>

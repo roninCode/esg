@@ -1,6 +1,8 @@
 <% if @proposal.status == "signed" %>
-  <div class="signed_pdf"><%= image_tag image_url(@proposal.pdf) %></div>
+   <%= image_tag image_url(@proposal.pdf) %>
+
 <% else %>
+
   <div><%= image_tag image_url(@advisor.logo) %></div>
 
   <h3>Client Information</h3>

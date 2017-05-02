@@ -15,15 +15,19 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.find_by(id: params[:id])
     @advisor = Advisor.find_by(id: @proposal.advisor_id)
     @client = Client.find_by(id: @proposal.client_id)
-    
-    respond_to do |format|
-      format.html      
-      format.pdf do
-        render pdf: "ethicapital_proposal",
-               template: "proposals/show.pdf.erb",
-               locals: {:proposal => @proposal}
+    if @proposal.status != "signed"
+      respond_to do |format|
+        format.html      
+        format.pdf do
+          render pdf: "ethicapital_proposal",
+                 template: "proposals/show.pdf.erb",
+                 locals: {:proposal => @proposal}
+        end
       end
-    end
+    else
+      pdf_filename = File.join(Rails.root, "/public/#{@proposal.pdf}")
+      send_file(pdf_filename, :filename => "#{@proposal.pdf}", :type => "application/pdf")
+    end  
   end
 
   def new

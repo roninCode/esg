@@ -9,19 +9,22 @@
           <% if proposal.status == "signed" %>
             <a href='/proposals/<%= proposal.id %>'>View this Signed Proposal</a>
           <% else %>
-            <a href='/proposals/<%= proposal.id %>'>View this Proposal</a>
+            <a href='/proposals/<%= proposal.id %>'>View/Upload Signed Proposal</a>
           <% end %>
-          <p>Proposal ID:<%= proposal.id %></p>
-          <p>Client ID:<%= proposal.client_id %></p>
-          <p>Advisor ID:<%= proposal.advisor_id %></p>
+
+          <p>Proposal ID: <%= proposal.id %></p>
+          <p>Client ID: <%= proposal.client_id %></p>
+          <p>Client Name: <%= Client.find_by(id: proposal.client_id).name %></p>
+          <br>
+          <p>Advisor ID: <%= Advisor.find_by(id: proposal.advisor_id).name %></p>
+          <p>Advisor Name:<%= proposal.advisor_id %></p>
+
           <p>Risk Model ID:<%= proposal.risk_model_id %></p>
-          <p>Status:<%= proposal.status %></p>
-        <% if current_advisor %>  
-          <a href="/proposals/<%= proposal.id %>/edit">Edit/Delete this Proposal</a>
-        <% end %>
-        <% if current_client && proposal.status == "pending" %>
-          <button>Status should be pending</button>
-        <% end %>
+          <p>Status: <h3><%= proposal.status %></h3></p>
+          
+          <% if current_advisor %>  
+            <a href="/proposals/<%= proposal.id %>/edit">Edit/Delete this Proposal</a>
+          <% end %>
         </div>
       <% end %> <!--Ends prop3.each -->
     </div> <!--Ends row div -->   

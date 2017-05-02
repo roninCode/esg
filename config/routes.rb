@@ -73,6 +73,8 @@ Rails.application.routes.draw do
 
   get 'proposals/:id/edit' => 'proposals#edit'
 
+  get '/public/uploads/proposal/pdf/:id' => 'proposals#pdf_show'
+
   patch '/proposals/:id' => 'proposals#update'
 
   delete '/proposals/:id' => 'proposals#destroy'
