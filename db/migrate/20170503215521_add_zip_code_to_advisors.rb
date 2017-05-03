@@ -3,5 +3,3 @@ class AddZipCodeToAdvisors < ActiveRecord::Migration[5.0]
     add_column :advisors, :zip_code, :string
   end
 end
-
-Testing branches
