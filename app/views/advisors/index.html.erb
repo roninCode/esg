@@ -1,5 +1,7 @@
 <div class="container-fluid">
-<h3>Advisors</h3>
+<h2>Hello <%= current_client.name %></h2>
+
+<h3>Here are your Advisors</h3>
 <hr>
   <% @client_advisors.each_slice(3) do |advisor3| %>
     <div class="row">
