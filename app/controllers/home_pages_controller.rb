@@ -11,4 +11,11 @@ class HomePagesController < ApplicationController
     render 'esg.html.erb'
   end
   
+  def testimonials
+    render 'testimonial.html.erb'
+  end
+  
+  def prices
+    render 'prices.html.erb'
+  end
 end

@@ -33,6 +33,7 @@ class SessionsController < ApplicationController
   def signup_client
     render 'signup_client.html.erb'
   end
+
   def signup_advisor
     render 'signup_advisor.html.erb'
   end

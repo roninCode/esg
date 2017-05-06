@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   get '/esg' => 'home_pages#esg'
 
+  get '/prices' => 'home_pages#prices'
+
+  get '/testimonials' => 'home_pages#testimonials'
+
   ######################################
 
   get '/advisors' => 'advisors#index'

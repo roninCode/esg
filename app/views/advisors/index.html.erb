@@ -11,6 +11,7 @@
           <p><%= advisor.name %> from <%= advisor.company %></p>
           <p>Phone: <%= advisor.phone %></p> 
           <p>email: <%= advisor.email %></p>
+          <a href="advisors/<%= advisor.id %>">View this Advisor</a>
           <br>
          
           <% if @invitation.where(advisor_id: advisor.id)[0].status == "pending" %>
