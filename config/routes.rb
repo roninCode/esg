@@ -103,7 +103,9 @@ Rails.application.routes.draw do
 
   get '/logout' => 'sessions#destroy'
 
-  get '/signup' => 'sessions#signup'
+  get '/signup_client' => 'sessions#signup_client'
+
+  get '/signup_advisor' => 'sessions#signup_advisor'
 
    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
