@@ -8,8 +8,10 @@
         <div class="col-md-4 well">
           <% if proposal.status == "signed" %>
             <a href='/proposals/<%= proposal.id %>'>View this Signed Proposal</a>
-          <% else %>
-            <a href='/proposals/<%= proposal.id %>'>View/Upload Signed Proposal</a>
+          <% elsif current_client %>
+            <a href='/proposals/<%= proposal.id %>'>View Pending / Upload Signed Proposal</a>
+          <% elsif current_advisor %>
+            <a href='/proposals/<%= proposal.id %>'>View Pending Proposal</a>
           <% end %>
 
           <p>Proposal ID: <%= proposal.id %></p>

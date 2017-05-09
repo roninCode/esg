@@ -14,6 +14,12 @@ Rails.application.routes.draw do
 
   get '/esg' => 'home_pages#esg'
 
+  get '/prices' => 'home_pages#prices'
+
+  get '/testimonials' => 'home_pages#testimonials'
+
+  get '/blog' => 'home_pages#blogs'
+
   ######################################
 
   get '/advisors' => 'advisors#index'
@@ -103,7 +109,9 @@ Rails.application.routes.draw do
 
   get '/logout' => 'sessions#destroy'
 
-  get '/signup' => 'sessions#signup'
+  get '/signup_client' => 'sessions#signup_client'
+
+  get '/signup_advisor' => 'sessions#signup_advisor'
 
    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
