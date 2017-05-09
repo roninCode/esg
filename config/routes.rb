@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get '/testimonials' => 'home_pages#testimonials'
 
+  get '/blog' => 'home_pages#blogs'
+
   ######################################
 
   get '/advisors' => 'advisors#index'

@@ -18,4 +18,8 @@ class HomePagesController < ApplicationController
   def prices
     render 'prices.html.erb'
   end
+
+  def blogs
+    render 'blog.html.erb'
+  end
 end
