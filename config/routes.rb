@@ -109,6 +109,8 @@ Rails.application.routes.draw do
 
   get '/logout' => 'sessions#destroy'
 
+  get '/signup' => 'sessions#signup_non_specific'
+
   get '/signup_client' => 'sessions#signup_client'
 
   get '/signup_advisor' => 'sessions#signup_advisor'

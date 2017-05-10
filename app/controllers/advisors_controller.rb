@@ -27,7 +27,8 @@ class AdvisorsController < ApplicationController
         company: params[:company],
         phone: params[:phone],
         email: params[:email],
-        logo: params[:logo]
+        logo: params[:logo],
+        zip_code: params[:zip_code]
       )
       flash[:info] = "You just updated this advisor"
       redirect_to "/advisors/#{@advisor.id}"
@@ -49,7 +50,8 @@ class AdvisorsController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation],
       email: params[:email],
-      logo: params[:logo]
+      logo: params[:logo],
+      zip_code: params[:zip_code]
     )
     if advisor.save
       session[:advisor_id] = advisor.id
