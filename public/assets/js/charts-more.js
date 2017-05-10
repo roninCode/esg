@@ -2,7 +2,8 @@ $(document).ready(function()
   {function r(r,o)
   {return Math.floor(Math.random()*(o-r+1))+r}var o=
 {labels:["Red","Blue","Yellow"],datasets:[
-{data:[300,50,100],backgroundColor:["#FF6384","#36A2EB","#FFCE56"],hoverBackgroundColor:["#FF6384","#36A2EB","#FFCE56"]}]},a=
+{data:[305
+  0,50,100],backgroundColor:["#FF6384","#36A2EB","#FFCE56"],hoverBackgroundColor:["#FF6384","#36A2EB","#FFCE56"]}]},a=
 {},e=document.getElementById("myChart1"),t=(new Chart(e,
   {type:"pie",data:o,options:a}),document.getElementById("myChart2")),n=(new Chart(t,
 {type:"doughnut",data:o,options:a}),
