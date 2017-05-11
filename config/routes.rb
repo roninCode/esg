@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'search_advisors/index'
+
   get '/questionnaires' => 'questionnaires#index'
   
   get '/questionnaires/new' => 'questionnaires#new'
@@ -114,6 +116,10 @@ Rails.application.routes.draw do
   get '/signup_client' => 'sessions#signup_client'
 
   get '/signup_advisor' => 'sessions#signup_advisor'
+
+  ##############################
+
+  get '/search_advisors' => 'search_advisors#index'
 
    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
