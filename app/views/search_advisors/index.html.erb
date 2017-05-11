@@ -4,3 +4,14 @@
 
 
 <%= @response %>
+
+<hr>
+
+<% @response['rows'][0]['elements'].each do |trip| %>
+  <p><%= trip['distance'] %></p>
+<% end %>
+
+
+<hr>
+
+<%= @response['rows'][0]['elements'][0]['distance']['text'] %>
