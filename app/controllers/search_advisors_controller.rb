@@ -12,7 +12,7 @@ class SearchAdvisorsController < ApplicationController
       end
     end
 
-    @response = Unirest.get("https://maps.googleapis.com/maps/api/distancematrix/json?origins=11206&destinations=#{@destinations}&key=AIzaSyDRvj_4M_xPyfnpWYVqkieWnBcThgRa8_M").body
+    @response = Unirest.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{@origin}&destinations=#{@destinations}&key=AIzaSyDRvj_4M_xPyfnpWYVqkieWnBcThgRa8_M").body
 
     render 'index.html.erb'
   end

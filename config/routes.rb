@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-  get 'search_advisors/index'
 
   get '/questionnaires' => 'questionnaires#index'
   

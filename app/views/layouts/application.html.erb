@@ -218,12 +218,13 @@
               <a href="javascript:void(0)" class="btn-circle btn-circle-primary animated zoomInDown animation-delay-7">
                 <i class="zmdi zmdi-share"></i>
               </a>         
-            <form class="search-form animated zoomInDown animation-delay-9">
-              <input id="search-box" type="text" class="search-input" placeholder="Search..." name="q" />
+           
+           <%= form_tag('/search_advisors', :class => "search-form animated zoomInDown animation-delay-9", method: "get") do %>
+              <input id="search-box" type="text" class="search-input" placeholder="Search Advisors by Address" name="client_zip_code" />
               <label for="search-box">
                 <i class="zmdi zmdi-search"></i>
               </label>
-            </form>
+          <% end %>
 
             <ul class="nav navbar-nav navbar-right">
               <% if session[:advisor_id] || session[:client_id] %>
