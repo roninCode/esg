@@ -1,17 +1,10 @@
-<div>
-  <%= @destinations %>
-</div>
-
-
-<%= @response %>
-
-<hr>
-
-<% @response['rows'][0]['elements'].each do |trip| %>
-  <p><%= trip['distance'] %></p>
+<h1>Here are some Advisors using EthiCapital close to You</h1>
+<% @distance.each_with_index do |dist, idx| %>
+  <% if dist < 40500 %>  
+    <%= image_tag(@advisors_list[idx].logo, :class => "advisor_logo") %>
+    <p><%= @advisors_list[idx].name %> is only <%= dist / 1609 %> miles away! </p>
+    <p><%= @advisors_list[idx].name %> works with <%= @advisors_list[idx].company %>.</p>
+    <p>You can reach <%= @advisors_list[idx].name %> by email at: <span class="advisor_email_hover"><%= @advisors_list[idx].email %></span></p>
+    <hr>
+  <% end %>
 <% end %>
-
-
-<hr>
-
-<%= @response['rows'][0]['elements'][0]['distance']['text'] %>
