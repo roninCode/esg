@@ -56,8 +56,10 @@ class AdvisorsController < ApplicationController
     if advisor.save
       session[:advisor_id] = advisor.id
       flash[:info] = "You just created a new advisor"
+      redirect_to '/clients'
+    else
+      redirect_to '/advisors/new'
     end
-    redirect_to '/clients'
   end
 
   def destroy
