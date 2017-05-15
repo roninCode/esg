@@ -7,9 +7,10 @@
     <p>Status: <%= invitation.status %></p>
     <a href="/invitations/<%= invitation.id %>/edit">Edit/Delete this Invitation</a>
   <% elsif current_client %>
+    <%= image_tag(Advisor.find_by(id: invitation.advisor_id).logo, :class => "advisor_logo") %>
     <p>Advisor Name: <%= (Advisor.find_by(id: invitation.advisor_id)).name %></p>
     <p>Advisor_id: <%= invitation.advisor_id %></p>
-    <p>Status: <%= invitation.status %></p>
+    <p>Status: <strong><%= invitation.status %></strong></p>
    
     <% if invitation.status.downcase == "pending" %>
       <%= form_tag("/invitations/#{invitation.id}", method: "patch") do %>
@@ -23,7 +24,6 @@
       <% end %>
     <% end %>
   <% end %>
-  
   <hr>
 <% end %>
 
