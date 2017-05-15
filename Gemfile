@@ -20,6 +20,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+# Unirest to get Google Maps API Distances
+gem 'unirest'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # Use jquery as the JavaScript library
@@ -32,8 +34,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 # Use GoogleCharts to create graphs
 gem 'googlecharts', '~> 1.6', '>= 1.6.12'
 # Wicked pdf turns html into pdf files --- wrapper for 'wkhtmltopdf-binary'
@@ -46,6 +46,10 @@ gem 'carrierwave', '~> 1.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'guard-rspec', require: false
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 group :development do

@@ -30,6 +30,10 @@ class SessionsController < ApplicationController
     redirect_to '/login'
   end
 
+  def signup_non_specific
+    render 'signup_non_specific.html.erb'
+  end
+
   def signup_client
     render 'signup_client.html.erb'
   end

@@ -19,6 +19,10 @@
       <input type="email" name="email" value="<%= @advisor.email %>">    
     </div>
 
+  <label for="zip_code"> zip code </label>
+    <div>
+      <input type="text" name="zip_code" value="<%= @advisor.zip_code %>">    
+    </div>
 <!-- trying to use carrierwave to upload logo -->  
   <%= label_tag(:logo) %>
     <%= file_field_tag(:logo) %>
