@@ -2,9 +2,25 @@ require 'test_helper'
 
 class AdvisorsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get advisors_index_url
+    get '/advisors'
     assert_response :success
   end
+
+  describe "the signin process", :type => :feature do
+    before :each do
+      User.make(email: 'user@example.com', password: 'password')
+    end
+
+  it "signs me in" do
+    visit '/sessions/new'
+    within("#session") do
+      fill_in 'Email', with: 'user@example.com'
+      fill_in 'Password', with: 'password'
+    end
+    click_button 'Sign in'
+    expect(page).to have_content 'Success'
+  end
+end
 
   test "should get show" do
     get advisors_show_url
