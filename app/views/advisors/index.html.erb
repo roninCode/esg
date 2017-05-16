@@ -1,5 +1,7 @@
 <div class="container-fluid">
-<h3>Advisors</h3>
+<h2>Hello <%= current_client.name %></h2>
+
+<h3>Here are your Advisors</h3>
 <hr>
   <% @client_advisors.each_slice(3) do |advisor3| %>
     <div class="row">
@@ -9,6 +11,7 @@
           <p><%= advisor.name %> from <%= advisor.company %></p>
           <p>Phone: <%= advisor.phone %></p> 
           <p>email: <%= advisor.email %></p>
+          <a href="advisors/<%= advisor.id %>">View this Advisor</a>
           <br>
          
           <% if @invitation.where(advisor_id: advisor.id)[0].status == "pending" %>

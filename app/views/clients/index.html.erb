@@ -10,6 +10,8 @@
         <p>Name: <%= client.name %></p>
         <p>Phone: <%= client.phone %></p>
         <p>Email: <%= client.email %></p>
+        <a href="/clients/<%= client.id %>">View this Client</a>
+        <hr>
         <a href="/clients/<%= client.id %>/edit">Edit/Delete this Client</a>
       </div>
     <% end %>

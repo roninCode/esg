@@ -57,7 +57,8 @@ class QuestionnairesController < ApplicationController
         client_id: current_client.id,
         advisor_id: params[:advisor_id],
         risk_model_id: risk_level,
-        status: "pending"
+        status: "pending",
+        questionnaire_id: questionnaire.id
       )
       proposal.save
     

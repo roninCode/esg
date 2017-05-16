@@ -13,6 +13,7 @@ class ProposalsController < ApplicationController
 
   def show
     @proposal = Proposal.find_by(id: params[:id])
+    @risk_model = RiskModel.find_by(id: @proposal.risk_model_id)
     @advisor = Advisor.find_by(id: @proposal.advisor_id)
     @client = Client.find_by(id: @proposal.client_id)
     if @proposal.status != "signed"
