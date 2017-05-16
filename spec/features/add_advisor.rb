@@ -13,7 +13,7 @@ RSpec.feature ' add an advisor' do
     # attach_file("logo", '/public/salad.jpg')
     # page.all(:fillable_field, 'password').first.set('jamie')
     # page.all(:fillable_field, 'password')[1].set('jamie')
-    page.all("password")
+
     fill_in "password", with: "jamie"
     fill_in "password_confirmation", with: "jamie"
     click_on("submit") 
