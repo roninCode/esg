@@ -3,10 +3,24 @@
   <div class="row">
     <% questionnaire3.each do |questionnaire| %>
       <div class="col-md-4 well">
-        <p>Questionnare ID: <%= questionnaire.id %></p>
-        <p><%= (questionnaire.question_1 + questionnaire.question_2 + questionnaire.question_3 + questionnaire.question_4 + questionnaire.question_5 + questionnaire.question_6 + questionnaire.question_7 + questionnaire.question_8 + questionnaire.question_9 + questionnaire.question_10 + questionnaire.question_11).to_f / 52.0 * 100  %></p>
-        <p>Average: <%= questionnaire.average %></p>
-        <p>Advisor ID: <%= questionnaire.advisor_id %></p>
+        <div class="row">
+          <div class="col-md-6">      
+            <p>Questionnare ID: <%= questionnaire.id %></p>
+            <p>Risk Score: <%= questionnaire.average.to_i %></p>
+            <p> - - - - - - - - - - - - - </p>
+            <p>Advisor: <%= Advisor.find_by(id: questionnaire.advisor_id).name %></p>
+            <p>Company: <%= Advisor.find_by(id: questionnaire.advisor_id).company %></p>
+            <p>Advisor ID: <%= questionnaire.advisor_id %></p>
+            <p>Completed: <%= (questionnaire.created_at).strftime("%b %d, %Y") %></p>
+            <% if Proposal.find_by(questionnaire_id: questionnaire.id) %>
+              <a href="/proposals/<%= Proposal.find_by(questionnaire_id: questionnaire.id).id %>">See your Proposal Here</a>
+            <% end %>
+          </div>
+          <div class="col-md-6">
+            <%= image_tag(Advisor.find_by(id: questionnaire.advisor_id).logo, :class => "advisor_logo") %>
+          </div>
+        </div>
+
       </div> <!-- Ends col-md-4 -->
     <% end %> <!-- Ends questionnairre3.each -->
   </div> <!-- Ends div row -->
