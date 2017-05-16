@@ -8,12 +8,12 @@ google.charts.setOnLoadCallback(drawChart4);
 function drawChart() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['Work',     11],
-    ['Eat',      2],
-    ['Commute',  2],
-    ['Watch TV', 2],
-    ['Sleep',    7]
+    ['Investment Type', 'Percentage'],
+    ['Green Bonds',     37],
+    ['ETFs',     13],
+    ['Small Cap',  10],
+    ['Mid Cap', 20],
+    ['Large Cap',    20]
   ]);
 
   var options = {
