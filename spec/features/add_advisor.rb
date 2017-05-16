@@ -3,21 +3,50 @@ require "rails_helper.rb"
 RSpec.feature ' add an advisor' do 
   scenario " allows a user to sign up as an advisor" do
     visit "/advisors/new"
-
     fill_in "name", with: "Devin Dutch"
     fill_in "company", with: "Dimes and Dozens"
     fill_in "phone", with: "123456789"
     fill_in "zip_code", with: "11206"
-    fill_in "email", with: "d@d", :match => :first
-    # fill_in "email", with: "d@d"
-    # attach_file("logo", '/public/salad.jpg')
-    # page.all(:fillable_field, 'password').first.set('jamie')
-    # page.all(:fillable_field, 'password')[1].set('jamie')
-
-    fill_in "password", with: "jamie"
+    fill_in "test_em", with: "d@do"
+    fill_in "password_field", with: "jamie"
     fill_in "password_confirmation", with: "jamie"
-    click_on("submit") 
+    click_on("Create an Advisor Account") 
+    expect(page).to have_content("Welcome to Ethi")
+  end
 
-    expect(page).to have_content("Here are your Clients")
+  scenario " advisor shouldn't be created if missing name" do
+    visit "/advisors/new"
+    fill_in "company", with: "Dimes and Dozens"
+    fill_in "phone", with: "123456789"
+    fill_in "zip_code", with: "11206"
+    fill_in "test_em", with: "d@do"
+    fill_in "password_field", with: "jamie"
+    fill_in "password_confirmation", with: "jamie"
+    click_on("Create an Advisor Account") 
+    expect(page).to have_content("Please fill out")
+  end
+
+    scenario " advisor shouldn't be created if missing email" do
+    visit "/advisors/new"
+    fill_in "name", with: "Devin Dutch"
+    fill_in "company", with: "Dimes and Dozens"
+    fill_in "phone", with: "123456789"
+    fill_in "zip_code", with: "11206"
+    fill_in "password_field", with: "jamie"
+    fill_in "password_confirmation", with: "jamie"
+    click_on("Create an Advisor Account") 
+    expect(page).to have_content("Please fill out")
+  end
+
+    scenario " advisor shouldn't be created if missing zip code" do
+    visit "/advisors/new"
+    fill_in "name", with: "Devin Dutch"
+    fill_in "company", with: "Dimes and Dozens"
+    fill_in "phone", with: "123456789"
+    fill_in "test_em", with: "d@do"
+    fill_in "password_field", with: "jamie"
+    fill_in "password_confirmation", with: "jamie"
+    click_on("Create an Advisor Account") 
+    expect(page).to have_content("Please fill out")
   end
 end

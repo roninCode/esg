@@ -16,23 +16,22 @@
 
   <label for="email"> email </label>
     <div>
-      <input type="email" name="email" value="<%= @advisor.email %>">    
+      <input type="email" name="email" id="test_em" value="<%= @advisor.email %>">    
     </div>
 
   <label for="zip_code"> zip code </label>
     <div>
       <input type="text" name="zip_code" value="<%= @advisor.zip_code %>">    
-    </div>
-<!-- trying to use carrierwave to upload logo -->  
-  <%= label_tag(:logo) %>
-    <%= file_field_tag(:logo) %>
-   
-<!-- trying to use carrierwave to upload logo -->  
-
-
+    </div>  
+  <div>  
+  <br>
+    <%= label_tag(:logo) %>
+      <%= file_field_tag(:logo) %>
+  </div>
+  <br>
   <label for="password"> Password </label>
-    <div id="password_field">
-      <input type="password" name="password"> 
+    <div>
+      <input id="password_field" type="password" name="password"> 
     </div>
   <label for="password_confirmation"> Confirm Password </label>
     <div id="confirmation_field">
@@ -40,6 +39,6 @@
     </div>
 
     <div>
-      <input type="submit">
+      <input type="submit" value="Create an Advisor Account">
     </div>
 <% end %>

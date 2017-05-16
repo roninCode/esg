@@ -55,9 +55,10 @@ class AdvisorsController < ApplicationController
     )
     if advisor.save
       session[:advisor_id] = advisor.id
-      flash[:info] = "You just created a new advisor"
+      flash[:info] = "Welcome to EthiCaptial!"
       redirect_to '/clients'
     else
+      flash[:danger] = "Please fill out the entire form"
       redirect_to '/advisors/new'
     end
   end
