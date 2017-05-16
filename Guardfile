@@ -14,8 +14,6 @@
 #  $ ln -s config/Guardfile .
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
-
-<<<<<<< HEAD
 guard :minitest do
   # with Minitest::Unit
   watch(%r{^test/(.*)\/?test_(.*)\.rb$})
@@ -42,8 +40,6 @@ guard :minitest do
   # watch(%r{^app/models/(.*)\.rb$})      { |m| "test/unit/#{m[1]}_test.rb" }
 end
 
-=======
->>>>>>> 187470932d00ecafa22cccc87eeb75db54f9c0d6
 # Note: The cmd option is now required due to the increasing number of ways
 #       rspec may be run, below are examples of the most common uses.
 #  * bundler: 'bundle exec rspec'
