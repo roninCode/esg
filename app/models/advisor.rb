@@ -9,5 +9,6 @@ class Advisor < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
   validates :zip_code, presence: true
+  validates :password, presence: true
 end
  

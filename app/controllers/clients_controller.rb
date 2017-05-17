@@ -30,9 +30,12 @@ class ClientsController < ApplicationController
     )
     if client.save
       session[:client_id] = client.id
-      flash[:info] = "You created a new client"
+      flash[:info] = "Welcome to EthiCapital!"
+      redirect_to "/advisors"
+    else
+      flash[:danger] = "Please fill out all fields"
+      redirect_to '/clients/new' 
     end
-    redirect_to '/advisors' 
   end
 
   def edit
