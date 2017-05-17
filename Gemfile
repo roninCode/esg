@@ -50,6 +50,7 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'percy-capybara'
 end
 
 group :development do
