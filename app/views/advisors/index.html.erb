@@ -1,6 +1,24 @@
 <div class="container-fluid">
 <h2>Hello <%= current_client.name %></h2>
 
+<% if @client_advisors.empty? %>
+  <h3>Thank you for joining EthiCapital!</h3>
+  <br>
+  <h4>Getting Started:</h4>
+  <br>
+  <h5>Don't have an Advisor?</h5>
+  <p>You can search through our advisors in the search in the top right.</p>
+  <p>You can contact an advisor that looks good to you by their listed email.</p>
+  <p>If you want to do business with them just send them your EthiCapital ID.</p>
+  <p>Your EthiCapital Id is: <%= current_client.id %></p>
+  <br>
+  <h5>Have an Advisor in EthiCapital?</h5>
+  <p>Send them your Ethicapital ID and they will send you an invitaion.</p>
+  <br>
+  <h5>Have an Advisor whose not signed up with EthiCapital></h5>
+  <p>Invite them to sign up by sending them our web address: <a href="#">www.ethicapital.io</a></p>
+<% else %>
+
 <h3>Here are your Advisors</h3>
 <hr>
   <% @client_advisors.each_slice(3) do |advisor3| %>
@@ -38,4 +56,5 @@
       <% end %>
     </div>
   <% end %>
+<% end %>
 </div>
