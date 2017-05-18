@@ -1,24 +1,32 @@
 <h2>Hello <%= current_advisor.name %></h2>
 
-<h3>Here are your Clients</h3>
-<hr>
-<% @advisor_clients.each_slice(3) do |client3| %>
-  <div class="row">
-    <% client3.each do |client| %>
-      <div class="col-md-4 well">    
-        <p>ID: <%= client.id %></p>
-        <p>Name: <%= client.name %></p>
-        <p>Phone: <%= client.phone %></p>
-        <p>Email: <%= client.email %></p>
-        <a href="/clients/<%= client.id %>">View this Client</a>
-        <hr>
-        <a href="/clients/<%= client.id %>/edit">Edit/Delete this Client</a>
-      </div>
-    <% end %>
-  </div>
+<% if current_advisor && @advisor_clients.empty? %>
+  <h3>Want to link with a client already in EthiCapital?</h3>
+    <p>Send them an invitaion using their EthiCapital ID <a href="/invitations/new">by clicking here</a></p>
+  <br>
+  <h3>Want to link with a client who isn't signed up with EthiCapital?</h3>
+    <p>Send them to <a href="/signup_client">www.ethicapital.io/signup_client</a></p>
+<% else %>
+
+  <h3>Here are your Clients</h3>
+  <hr>
+  <% @advisor_clients.each_slice(3) do |client3| %>
+    <div class="row">
+      <% client3.each do |client| %>
+        <div class="col-md-4 well">    
+          <p>ID: <%= client.id %></p>
+          <p>Name: <%= client.name %></p>
+          <p>Phone: <%= client.phone %></p>
+          <p>Email: <%= client.email %></p>
+          <a href="/clients/<%= client.id %>">View this Client</a>
+          <hr>
+          <a href="/clients/<%= client.id %>/edit">Edit/Delete this Client</a>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <hr>
+
+  <a href="/invitations/new"><h3>Send an Invitation to Your Client to join your Portfolio</h3></a>
+    <p>**(You will need their EthiCapital Client ID #)</p>
 <% end %>
-<hr>
-
-<a href="/invitations/new"><h3>Send an Invitation to Your Client to join your Portfolio</h3></a>
-<p>**(You will need their EthiCapital Client ID #)</p>
-
