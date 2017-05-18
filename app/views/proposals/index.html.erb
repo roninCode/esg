@@ -1,7 +1,15 @@
-<h3>All the Proposals</h3>
-
 <div class="container-fluid">
-  
+
+<% if current_client && @proposals.empty? %>
+  <h3>Please fill out a Questionnaire to get a proposal</h3>
+  <p>Select Options in the bar above</p>
+  <p>Then click on Questionnaires and fill out a risk-capacity questionnaire</p>
+  <p>** If you have multiple advisors make sure to select the correct one before submission**</p>
+  <p>We'll then build you a cutom portfolio based on your risk-preferences</p>
+
+<% else %>
+
+<h3>All the Proposals</h3>  
   <% @proposals.each_slice(3) do |proposal3| %>
     <div class="row">
       <% proposal3.each do |proposal| %>
@@ -31,4 +39,5 @@
       <% end %> <!--Ends prop3.each -->
     </div> <!--Ends row div -->   
   <% end %> <!--Ends @proposals.each-->
+<% end %>
 </div>

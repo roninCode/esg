@@ -13,10 +13,12 @@
   <p>Your EthiCapital Id is: <%= current_client.id %></p>
   <br>
   <h5>Have an Advisor in EthiCapital?</h5>
-  <p>Send them your Ethicapital ID and they will send you an invitaion.</p>
+  <p>Send them your EthiCapital ID (<%= current_client.id %>) and they will send you an invitaion.</p>
   <br>
-  <h5>Have an Advisor whose not signed up with EthiCapital></h5>
+  <h5>Have an Advisor whose not signed up with EthiCapital?</h5>
   <p>Invite them to sign up by sending them our web address: <a href="#">www.ethicapital.io</a></p>
+  <p>Once they're signed up, just send them your EthiCapital ID: <%= current_client.id %></p>
+  <br>
 <% else %>
 
 <h3>Here are your Advisors</h3>
@@ -25,6 +27,7 @@
     <div class="row">
       <% advisor3.each do |advisor| %>
         <div class="col-md-4 well">
+          <h5><%= @invitation.where(advisor_id: advisor.id)[0].status.capitalize %></h5>
           <p>ID: <%= advisor.id %></p>
           <p><%= advisor.name %> from <%= advisor.company %></p>
           <p>Phone: <%= advisor.phone %></p> 
