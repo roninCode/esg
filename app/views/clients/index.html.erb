@@ -14,8 +14,8 @@
     <div class="row">
       <% client3.each do |client| %>
         <div class="col-md-4 well">    
-          <p>ID: <%= client.id %></p>
           <p>Name: <%= client.name %></p>
+          <p>ID: <%= client.id %></p>
           <p>Phone: <%= client.phone %></p>
           <p>Email: <%= client.email %></p>
           <a href="/clients/<%= client.id %>">View this Client</a>
@@ -27,6 +27,8 @@
   <% end %>
   <hr>
 
-  <a href="/invitations/new"><h3>Send an Invitation to Your Client to join your Portfolio</h3></a>
+  <a href="/invitations/new"><h3>Send an Invitation to Potential or Existing Clients</h3></a>
     <p>**(You will need their EthiCapital Client ID #)</p>
 <% end %>
+<br>
+
