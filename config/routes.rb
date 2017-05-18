@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/questionnaires' => 'questionnaires#create'
   ###################################
   get '/' => 'home_pages#index'
-
+  
   get '/home' => 'home_pages#index'
   
   get '/about' => 'home_pages#about'
@@ -77,7 +77,9 @@ Rails.application.routes.draw do
 
   get '/proposals/:id' => 'proposals#show'
 
-  get 'proposals/:id/edit' => 'proposals#edit'
+  get '/proposals/esign/:id' => 'proposals#show_esign'
+
+  get '/proposals/:id/edit' => 'proposals#edit'
 
   get '/public/uploads/proposal/pdf/:id' => 'proposals#pdf_show'
 
