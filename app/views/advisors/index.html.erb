@@ -28,7 +28,7 @@
           <% end %>     
           <br>
 
-          <%= form_tag("/invitations/#{@invitation.where(advisor_id: advisor.id)[0].id}", method: "delete") do %>
+          <%= form_tag("/invitations/#{@invitation.where(advisor_id: advisor.id)[0].id}", method: "delete", data: {confirm: "Are you sure you want to delete this advisor?"}) do %>
             <button type="submit">Remove this Advisor</button>
           <% end %>
           

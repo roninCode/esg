@@ -7,6 +7,8 @@ class Advisor < ApplicationRecord
   
   mount_uploader :logo, LogoUploader
   validates :name, presence: true
+  validates :email, presence: true
   validates :zip_code, presence: true
+  validates :password, presence: true
 end
  

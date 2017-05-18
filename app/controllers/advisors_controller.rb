@@ -43,6 +43,8 @@ class AdvisorsController < ApplicationController
   end  
 
   def create
+    response = Unirest.get("https://gist.githubusercontent.com/dryan/7486408/raw/dda158f44480f8c433dc8fd1db9c07ed9aadf989/valid-zips.json").body
+
     advisor = Advisor.new(
       name: params[:name],
       company: params[:company],
@@ -53,11 +55,12 @@ class AdvisorsController < ApplicationController
       logo: params[:logo],
       zip_code: params[:zip_code]
     )
-    if advisor.save
+    if response.include?(advisor.zip_code) && advisor.save
       session[:advisor_id] = advisor.id
-      flash[:info] = "You just created a new advisor"
+      flash[:info] = "Welcome to EthiCaptial!"
       redirect_to '/clients'
     else
+      flash[:danger] = "Please fill out the entire form"
       redirect_to '/advisors/new'
     end
   end
