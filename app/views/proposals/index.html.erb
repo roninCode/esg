@@ -7,8 +7,14 @@
   <p>** If you have multiple advisors make sure to select the correct one before submission**</p>
   <p>We'll then build you a cutom portfolio based on your risk-preferences</p>
 
-<% else %>
+<% elsif current_advisor && @proposals.empty? %>
+  <h3>Waiting for a Client to Generate a Proposal?</h3>
+  <p>Have them log in and fill out a questionnaire</p>
+  <h5>OR</h5>
+  <p>Send them to <a href="/questionnaires/new">www.ethicapital.io/questionnaires/new</a> to fill out a questionnare. ***Just make sure they're logged in***</p>
+  <h5>Once they've submitted a questionnaire we'll automatically generate a customized proposal for them and you can see it here</h5>
 
+<% else %>
 <h3>All the Proposals</h3>  
   <% @proposals.each_slice(3) do |proposal3| %>
     <div class="row">
