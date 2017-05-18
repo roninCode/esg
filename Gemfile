@@ -21,6 +21,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Unirest to get Google Maps API Distances
+# Sig Pad
+gem 'signature-pad-rails'
+
 gem 'unirest'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

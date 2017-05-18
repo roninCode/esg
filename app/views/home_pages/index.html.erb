@@ -379,7 +379,10 @@
                 <div class="col-lg-12">
                   <div class="card card-primary animated zoomInUp animation-delay-5">
                     <div class="card-block">
-                      <form class="form-horizontal">
+                     
+
+
+                      <%= form_tag '/', method: 'post', :class => 'form-horizontal' do %>
                         <fieldset>
                           <div class="form-group">
                             <label for="inputName" class="col-md-2 control-label">Name</label>
@@ -409,7 +412,13 @@
                             </div>
                           </div>
                         </fieldset>
-                      </form>
+                      <% end %>
+
+
+
+
+
+
                     </div>
                   </div>
                 </div>
