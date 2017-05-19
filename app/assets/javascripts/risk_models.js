@@ -1,10 +1,3 @@
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-google.charts.setOnLoadCallback(drawChart1);
-google.charts.setOnLoadCallback(drawChart2);
-google.charts.setOnLoadCallback(drawChart3);
-google.charts.setOnLoadCallback(drawChart4);
-
 function drawChart() {
 
   var data = google.visualization.arrayToDataTable([
@@ -109,3 +102,10 @@ function drawChart4() {
 
   chart.draw(data, options);
 }
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawChart1);
+google.charts.setOnLoadCallback(drawChart2);
+google.charts.setOnLoadCallback(drawChart3);
+google.charts.setOnLoadCallback(drawChart4);

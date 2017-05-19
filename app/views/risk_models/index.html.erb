@@ -1,11 +1,5 @@
-<div id="piechart" style="width: 900px; height: 500px;"></div>
-<div id="piechart1" style="width: 900px; height: 500px;"></div>
-<div id="piechart2" style="width: 900px; height: 500px;"></div>
-<div id="piechart3" style="width: 900px; height: 500px;"></div>
-<div id="piechart4" style="width: 900px; height: 500px;"></div>
-
-<!-- Original Code Below -->
 <h3>All the Risk Models</h3>
+
 <% @risk_models.each do |risk_model| %>
   <p>Name: <%= risk_model.name %></p>
   <p>Risk_level: <%= risk_model.risk_level %></p>
@@ -16,3 +10,9 @@
   <p>Etfs: <%= risk_model.etfs %></p>
   <hr>
 <% end %>
+
+<div id="piechart" style="width: 900px; height: 500px;"></div>
+<div id="piechart1" style="width: 900px; height: 500px;"></div>
+<div id="piechart2" style="width: 900px; height: 500px;"></div>
+<div id="piechart3" style="width: 900px; height: 500px;"></div>
+<div id="piechart4" style="width: 900px; height: 500px;"></div>
