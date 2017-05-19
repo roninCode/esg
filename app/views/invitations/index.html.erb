@@ -1,30 +1,46 @@
-<h3>All Invitations</h3>
 
-<% @invitations.each do |invitation| %>
-  <% if current_advisor %>
-    <p>Client Name: <%= (Client.find_by(id: invitation.client_id)).name %></p>
-    <p>Client_id: <%= invitation.client_id %></p>    
-    <p>Status: <%= invitation.status %></p>
-    <a href="/invitations/<%= invitation.id %>/edit">Edit/Delete this Invitation</a>
-  <% elsif current_client %>
-    <%= image_tag(Advisor.find_by(id: invitation.advisor_id).logo, :class => "advisor_logo") %>
-    <p>Advisor Name: <%= (Advisor.find_by(id: invitation.advisor_id)).name %></p>
-    <p>Advisor_id: <%= invitation.advisor_id %></p>
-    <p>Status: <strong><%= invitation.status %></strong></p>
-   
-    <% if invitation.status.downcase == "pending" %>
-      <%= form_tag("/invitations/#{invitation.id}", method: "patch") do %>
-        <div class="hidden">
-          <input type="text" name="advisor_id" value="<%= invitation.advisor_id %>">
-          <input type="text" name="client_id" value="<%= invitation.client_id %>">
-        </div>
-        <div>
-          <button type="submit"><input class="hidden" type="text" name="status" value="accepted">Accept this Invitation</button>
-        </div>
+<% if current_advisor && @invitations.empty? %>
+  <h3>Haven't Sent any Invitations yet?</h3>
+    <p>Click <a href="/invitations/new">here</a> and enter the client's EthiCapital ID</p>
+  <br> 
+  <h3>Have an existing client not signed up with EthiCapital?</h3>
+    <p>Send them to <ab= href="/signup_client">www.ethicapital.io/signup_client</a></p>
+    <p>Once they're registered have them send you their EthiCapital ID</p>
+    <p>Enter their Id <a href="/invitations/new">here</a></p>
+    <p>They will receive your invitation and, once they accept, you can begin the proposal process</p>
+<% elsif current_client && @invitations.empty? %>
+  <h3>Don't have an invitation yet?</h3>
+    <p>Send your advisor to <a href="/invitations/new">www.ethicapital.io/invitations/new</a></p>
+    <p>Have them enter your EthiCapital ID (which is: <%= current_client.id %>)</p>
+    <p>Once they've entered your ID, you'll receive an invitation here!</p>
+<% else %>
+  <h3>All Invitations</h3>
+  <% @invitations.each do |invitation| %>
+    <% if current_advisor %>
+      <p>Client Name: <%= (Client.find_by(id: invitation.client_id)).name %></p>
+      <p>Client_id: <%= invitation.client_id %></p>    
+      <p>Status: <%= invitation.status %></p>
+      <a href="/invitations/<%= invitation.id %>/edit">Edit/Delete this Invitation</a>
+    <% elsif current_client %>
+      <%= image_tag(Advisor.find_by(id: invitation.advisor_id).logo, :class => "advisor_logo") %>
+      <p>Advisor Name: <%= (Advisor.find_by(id: invitation.advisor_id)).name %></p>
+      <p>Advisor_id: <%= invitation.advisor_id %></p>
+      <p>Status: <strong><%= invitation.status %></strong></p>
+     
+      <% if invitation.status.downcase == "pending" %>
+        <%= form_tag("/invitations/#{invitation.id}", method: "patch") do %>
+          <div class="hidden">
+            <input type="text" name="advisor_id" value="<%= invitation.advisor_id %>">
+            <input type="text" name="client_id" value="<%= invitation.client_id %>">
+          </div>
+          <div>
+            <button type="submit"><input class="hidden" type="text" name="status" value="accepted">Accept this Invitation</button>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
+    <hr>
   <% end %>
-  <hr>
 <% end %>
 
 <% if current_advisor %>
