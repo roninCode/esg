@@ -10,22 +10,34 @@
       <input type="text" name="company" value="<%= @advisor.company %>">    
     </div>
 
-  <label for="phone"> phone </label>
+  <label for="phone"> Phone </label>
     <div>
       <input type="text" name="phone" value="<%= @advisor.phone %>">    
     </div>
 
-  <label for="email"> email </label>
+  <label for="email"> Email </label>
     <div>
       <input type="text" name="email" value="<%= @advisor.email %>">    
     </div>
+  <label for="zip_code"> Zip Code </label>
+    <div>
+      <input type="text" name="zip_code" value="<%= @advisor.zip_code %>">    
+    </div>
+  <br>
+
+  <label for="tags"> tags </label>
+  <p>*** i.e. Renewable Energy, human rights, executive compensations...  ***</p>
+    <div>
+      <input type="text" name="tags" value="<%= @advisor.tags %>">    
+    </div>
+  <br>
 
   <label for="logo"> Logo </label>
     <div>
       <%= file_field_tag "logo" %>
       <!-- <input type="text" name="logo" value="<%= @advisor.logo %>">   -->  
     </div>
-<br>
+  <br>
     <div>
       <input type="submit" value="Edit this Advisor">
     </div>

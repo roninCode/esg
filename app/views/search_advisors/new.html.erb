@@ -1,0 +1,20 @@
+
+<h2>Search for Advisors Near You</h2>
+<p>Enter a zip code or full address below to find Advisors within 25 miles of your location </p>
+<%= form_tag('/search_advisors', :class => "search-form animated zoomInDown animation-delay-9", method: "get") do %>
+    <input id="search-box" type="text" class="search-input" placeholder="Search by Address" name="client_zip_code" />
+    <label for="search-box">
+      <i class="zmdi zmdi-search"></i>
+    </label>
+  <button type="submit" value="Submit">Search</button>
+<% end %>
+
+<p>Search for Advisors based on their Area of Focus</p>
+<p>*** i.e. Climate change, nuclear energy, sustainability, animal welfare, management structure....</p>
+<%= form_tag('/search_advisors', :class => "search-form animated zoomInDown animation-delay-9", method: "get") do %>
+    <input id="search-box" type="text" class="search-input" placeholder="Search by Areas of Focus" name="advisor_tags" />
+    <label for="search-box">
+      <i class="zmdi zmdi-search"></i>
+    </label>
+  <button type="submit" value="Submit">Search</button>
+<% end %>

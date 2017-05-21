@@ -28,6 +28,7 @@ class AdvisorsController < ApplicationController
         phone: params[:phone],
         email: params[:email],
         logo: params[:logo],
+        tags: params[:tags],
         zip_code: params[:zip_code]
       )
       flash[:info] = "You just updated this advisor"
@@ -53,6 +54,7 @@ class AdvisorsController < ApplicationController
       password_confirmation: params[:password_confirmation],
       email: params[:email],
       logo: params[:logo],
+      tags: params[:tags],
       zip_code: params[:zip_code]
     )
     if response.include?(advisor.zip_code) && advisor.save

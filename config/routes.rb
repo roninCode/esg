@@ -121,5 +121,6 @@ Rails.application.routes.draw do
 
   get '/search_advisors' => 'search_advisors#index'
 
+  get '/search_advisors/new' => 'search_advisors#new'
    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

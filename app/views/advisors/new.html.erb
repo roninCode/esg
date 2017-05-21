@@ -23,8 +23,16 @@
     <div>
       <input type="text" name="zip_code" value="<%= @advisor.zip_code %>">    
     </div>  
-  <div>  
+
+  <br>    
+  <label for="tags"> Your ESG fields of expertise </label>
+    <p>*** i.e. Renewable Energy, human rights, executive compensations...  ***</p>
+    <div>
+      <input type="text" name="tags" value="<%= @advisor.tags %>">    
+    </div>
+
   <br>
+  <div>
     <%= label_tag(:logo) %>
       <%= file_field_tag(:logo) %>
   </div>
