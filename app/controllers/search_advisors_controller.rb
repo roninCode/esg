@@ -27,12 +27,18 @@ class SearchAdvisorsController < ApplicationController
           @destinations += "#{advisor.zip_code}|"
         end
       end
-      @response = Unirest.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{@origin}&destinations=#{@destinations}&key=#{ENV['Google_Maps_API']}").body
-      @distance = []
-      @response['rows'][0]['elements'].each do |trip|
-        @distance << trip['distance']['value']
+      if !@advisors_list.empty?
+        @response = Unirest.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=#{@origin}&destinations=#{@destinations}&key=#{ENV['Google_Maps_API']}").body
+        @distance = []
+        
+        @response['rows'][0]['elements'].each do |trip|
+          @distance << trip['distance']['value']
+        end
+        render 'index.html.erb'
+      else
+        flash[:warning] = "Sorry, no Advisors matched your areas of focus desciption"
+        redirect_to "/search_advisors/new"
       end
-      render 'index.html.erb'
    
     elsif params[:client_zip_code]
       Advisor.all.each do |advisor|
@@ -70,6 +76,9 @@ class SearchAdvisorsController < ApplicationController
       Advisor.search_for("#{@advisor_tags}").each do |advisor|
         @advisors_list << advisor
       end
+      render 'index.html.erb'
+  
+    else
       render 'index.html.erb'
     end
   end

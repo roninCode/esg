@@ -1,5 +1,9 @@
-<h3>Here are all the Questionnaires</h3>
+<% if @questionnaires.empty? %>
+  <h3>Don't have any questionnaires?</h3>
+  <p>No problem. Just clink on the link below to complete a questionnaire and get your first proposal.</p>
+<% else %>
 <% @questionnaires.each_slice(3) do |questionnaire3| %>
+<h3>Here are all the Questionnaires</h3>
   <div class="row">
     <% questionnaire3.each do |questionnaire| %>
       <div class="col-md-4 well">
@@ -25,6 +29,7 @@
     <% end %> <!-- Ends questionnairre3.each -->
   </div> <!-- Ends div row -->
 <% end %> <!-- Ends slice(3) -->
+<% end %>
 
 <% if current_client %>
   <a href='/questionnaires/new'><h3>Fill out a Risk Questionnaire</h3></a>

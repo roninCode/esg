@@ -1,3 +1,9 @@
+<% if @advisors.empty? %>
+  <h1>You must have an EthiCapital Advisor to complete a questionnaire</h1>
+  <h3>Don't have an EthiCapital Advisor?</h3>
+  <p>Search for an advisor near you, based on their area of focus, or both <a href="/search_advisors/new">here</a>.</p>
+
+<% else %>
 <div class="container">
   <h2>Client Questionnaire</h2>
   <%= form_tag("/questionnaires", method: "post") do %>
@@ -187,3 +193,4 @@
 
   <% end %>
 </div>
+<% end %>

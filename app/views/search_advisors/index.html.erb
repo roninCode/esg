@@ -4,9 +4,10 @@
   <% @distance.each_with_index do |dist, idx| %>
     <% if dist < 40500 %>  
       <%= image_tag(@advisors_list[idx].logo, :class => "advisor_logo") %>
-      <p><%= @advisors_list[idx].name %> is only <%= dist / 1609 %> miles away! </p>
-      <p><%= @advisors_list[idx].name %> works with <%= @advisors_list[idx].company %>.</p>
-      <p>You can reach <%= @advisors_list[idx].name %> by email at: <span class="advisor_email_hover"><%= @advisors_list[idx].email %></span></p>
+      <p><strong><%= @advisors_list[idx].name %></strong> is only <%= dist / 1609 %> miles away! </p>
+      <p><%= @advisors_list[idx].name %> works with <strong><%= @advisors_list[idx].company %></strong> and specializes in:</p>
+      <p><strong><%= @advisors_list[idx].tags %></strong></p>
+      <p>You can reach <%= @advisors_list[idx].name %> by <strong>email at: <span class="advisor_email_hover"><%= @advisors_list[idx].email %></strong></span></p>
       <hr>
     <% end %>
   <% end %>
@@ -35,5 +36,8 @@
     <p>You can reach <%= advisor.name %> by email at: <span class="advisor_email_hover"><%= advisor.email %></span></p>
     <hr>
   <% end %>
-  
+
+<% else %>
+<h1>Didn't find any advisors that matched what you were looking for?</h1>
+<h3>Try again <a href="/search_advisors/new">here</a></h3>
 <% end %>
