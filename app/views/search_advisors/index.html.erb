@@ -1,6 +1,5 @@
-<h1>Here are some Advisors using EthiCapital close to You</h1>
-
 <% if @origin %>
+<h1>Here are some Advisors using EthiCapital close to You</h1>
   <% @distance.each_with_index do |dist, idx| %>
     <% if dist < 40500 %>  
       <%= image_tag(@advisors_list[idx].logo, :class => "advisor_logo") %>
@@ -10,11 +9,17 @@
       <hr>
     <% end %>
   <% end %>
+
 <% elsif @advisor_tags %>
-  <% @advisor_list.each do |advisor| %>
-    <%= image_tag(@advisors_list[idx].logo, :class => "advisor_logo") %>
-    <p><%= @advisors_list[idx].name %> is only <%= dist / 1609 %> miles away! </p>
-    <p><%= @advisors_list[idx].name %> works with <%= @advisors_list[idx].company %>.</p>
-    <p>You can reach <%= @advisors_list[idx].name %> by email at: <span class="advisor_email_hover"><%= @advisors_list[idx].email %></span></p>
+<h1>Here are some Advisors using EthiCapital</h1> 
+<h3>who are experts in <%= @advisor_tags_phrase %></h3>
+<br>
+  <% @advisors_list.each do |advisor| %>
+    <%= image_tag(advisor.logo, :class => "advisor_logo") %>
+    <p><%= advisor.name %> works with <%= advisor.company %>.</p>
+    <p><%= advisor.name %> specializes in:</p> 
+    <p><%= advisor.tags %></p>
+    <p>You can reach <%= advisor.name %> by email at: <span class="advisor_email_hover"><%= advisor.email %></span></p>
+    <hr>
   <% end %>
 <% end %>

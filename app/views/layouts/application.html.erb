@@ -240,9 +240,12 @@
               <% end %>
 
               <% if current_advisor %>
-                <li><a href="#">Advisor ID: <%= current_advisor.id %></a></li>
+                <li><a href="/advisors/<%= current_advisor.id %>">Advisor ID: <%= current_advisor.id %></a></li>
+                <li><a href="/advisors/<%= current_advisor.id %>"> <%= current_advisor.name %></li>
               <% elsif current_client %>
-                <li><a href="#">Client ID: <%= current_client.id %></a></li>
+                <li><a href="/clients/<%= current_client.id %>"><%= current_client.name %></a></li>
+                <li><a href="/clients/<%= current_client.id %>">Client ID: <%= current_client.id %></a></li>
+                <li><a href="/search_advisors/new">Search Advisors</a></li>
               <% end %>
             </ul>
           </div>

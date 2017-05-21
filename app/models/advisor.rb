@@ -10,5 +10,6 @@ class Advisor < ApplicationRecord
   validates :email, presence: true
   validates :zip_code, presence: true
   validates :password, presence: true
+  scoped_search on: [:tags]
 end
  

@@ -25,7 +25,9 @@ gem 'coffee-rails', '~> 4.2'
 # Unirest to get Google Maps API Distances
 # Sig Pad
 gem 'signature-pad-rails'
-
+# Search for keywords
+gem "scoped_search"
+# Make API calls
 gem 'unirest'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
