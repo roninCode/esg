@@ -15,3 +15,4 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+app/controllers/search_advisors_controller.rb
