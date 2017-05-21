@@ -470,78 +470,21 @@
                 </ul>
               </li>
 
-
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle animated fadeIn animation-delay-8" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="portfolio">Our Portfolios
-                  <i class="zmdi zmdi-chevron-down"></i>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="/risk_models">
-                      <i class="zmdi zmdi-view-compact"></i> Core Satelite Model</a>
-                  </li>
-                  <li>
-                    <a href="/risk_models">
-                      <i class="zmdi zmdi-view-agenda"></i> Low Volatility Risk Model</a>
-                  </li>
-                  <li>
-                    <a href="/risk_models">
-                      <i class="zmdi zmdi-view-compact"></i> Mild Volatility Risk Model</a>
-                  </li>
-                  <li>
-                    <a href="/risk_models">
-                      <i class="zmdi zmdi-view-agenda"></i> Medium Volatility Risk Model</a>
-                  </li>
-                  <li>
-                    <a href="/risk_models">
-                      <i class="zmdi zmdi-card-membership"></i> Moderate Volatiliy Risk Model</a>
-                  </li>
-                  <li>
-                    <a href="/risk_models">
-                      <i class="zmdi zmdi-view-dashboard"></i> High Volatility Risk Model</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle animated fadeIn animation-delay-7" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog">Blog
-                  <i class="zmdi zmdi-chevron-down"></i>
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="/blog">
-                      <i class="zmdi zmdi-view-compact"></i> General</a>
-                  </li>
-                  <li>
-                    <a href="/blog">
-                      <i class="zmdi zmdi-view-compact"></i> Advisors</a>
-                  </li>
-                  <li>
-                    <a href="/blog">
-                      <i class="zmdi zmdi-view-dashboard"></i> Clients</a>
-                  </li>
-                </ul>
-              </li>
-              
-
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle animated fadeIn animation-delay-9" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="ecommerce">Options
+                <a href="#" class="dropdown-toggle animated fadeIn animation-delay-9" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="ecommerce">Your Information
                   <i class="zmdi zmdi-chevron-down"></i>
                 </a>
                 <ul class="dropdown-menu">
                   <% if session[:advisor_id] || session[:client_id] %>
                     <li><a href="/invitations">Invitations</a></li>
+                    <li><a href="/questionnaires">Questionnaires</a></li>
                     <li><a href="/proposals">Proposals</a></li>
                     <li><a href="/risk_models">Risk Models</a></li>
-                    <li><a href="/questionnaires">Questionnaires</a></li>
                     <% if session[:advisor_id] %>
                       <li><a href="/clients">Clients</a></li>
                     <% elsif session[:client_id] %>
                       <li><a href="/advisors">Advisors</a></li>
                     <% end %>
-
-                    <li role="separator" class="divider"></li>
-                    <li><a href="/">Back Home</a></li>
                   <% end %>
                   <% if !session[:advisor_id] && !session[:client_id] %> 
                     <li><a href="/risk_models">Risk Models</a></li>
