@@ -1,3 +1,4 @@
+
 class ClientsController < ApplicationController
   def index
     @advisor_clients = []
@@ -11,6 +12,21 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find_by(id: params[:id])
+    @invitations = Invitation.where(client_id: current_client.id)
+    @advisors = []
+    @invitations.each do |invit|
+      @advisors << Advisor.find_by(id: invit.advisor_id)
+    end
+    if @advisors[0]
+      @advis1 = @advisors[0]
+    end
+    if @advisors[1]
+      @advis2 = @advisors[1]
+    end
+    if @advisors[2]
+      @advis3 = @advisors[2]
+    end
+
     render 'show.html.erb'
   end
 

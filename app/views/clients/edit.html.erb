@@ -15,17 +15,14 @@
       <input type="text" name="email" value="<%= @client.email %>">    
     </div>
 
-  <label for="risk_tolerance"> Risk Tolerance </label>
     <div>
-      <input type="text" name="risk_tolerance" value="<%= @client.risk_tolerance %>">    
-    </div>
-
-    <div>
-      <input type="submit" value="Edit this client">
+      <input type="submit" value="Edit Your Info">
     </div>
 <% end %>
 
-<h4>Want to Delete this client?</h4>
-<%= form_tag "/clients/#{@client.id}", method: :delete do %>
-  <input type="submit" value="This will delete this Advisor">
+<br><br>
+
+<h4>Want to Delete Your EthiCapital Account?</h4>
+<%= form_tag("/clients/#{@client.id}", method: :delete, data: {confirm: "Are you sure you want to delete your account?"} ) do %>
+  <input type="submit" value="This will delete your Account!">
 <% end %>
