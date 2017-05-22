@@ -245,8 +245,8 @@
               <% elsif current_client %>
                 <li><a href="/clients/<%= current_client.id %>"><%= current_client.name %></a></li>
                 <li><a href="/clients/<%= current_client.id %>">Client ID: <%= current_client.id %></a></li>
-                <li><a href="/search_advisors/new">Search Advisors</a></li> 
               <% end %>
+              <li><a href="/search_advisors/new">Search Advisors</a></li> 
             </ul>
           </div>
         </div>
@@ -386,20 +386,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="dropdown-submenu">
-                    <a href="javascript:void(0)" class="has_children">Testimonies</a>
-                    <ul class="dropdown-menu dropdown-menu-left">
-                      <li>
-                        <a href="/testimonials">Testimonials</a>
-                      </li>
-                      <li>
-                        <a href="/testimonials">What Advisors say about Us</a>
-                      </li>
-                      <li>
-                        <a href="/testimonials">What Clients say about us</a>
-                      </li>
-                    </ul>
-                  </li>
+                  
                   <li class="dropdown-submenu">
                     <a href="javascript:void(0)" class="has_children">Signup/Login</a>
                     <ul class="dropdown-menu dropdown-menu-left">
@@ -431,20 +418,10 @@
                         <a href="/about">Work with your Financial Advisor</a>
                       </li>
                       <li>
-                        <a href="/about">Find a Financial Advisor</a>
+                        <a href="/search_advisors/new">Find a Financial Advisor</a>
                     </ul>
                   </li>
-                  <li class="dropdown-submenu">
-                    <a href="javascript:void(0)" class="has_children">Testimonies</a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="/testimonials">Client Testimonies</a>
-                      </li>
-                      <li>
-                        <a href="/testimonials">Advisor Testimonies</a>
-                      </li>
-                    </ul>
-                  </li>
+                  
                   <li class="dropdown-submenu">
                     <a href="javascript:void(0)" class="has_children">Why Ethical Investments</a>
                     <ul class="dropdown-menu dropdown-menu-left">
