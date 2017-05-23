@@ -12,15 +12,15 @@
             <div class="row">
               <div class="col-sm-2 col-xs-4 col-sm-offset-3">
                 <div class="item">
-                  <span><%= Invitation.where(client_id: current_client.id).where(status: "pending").count %></span>Pending Invitations </div>
+                  <span><%= Invitation.where(client_id: @client.id).where(status: "pending").count %></span>Pending Invitations </div>
               </div>
               <div class="col-sm-2 col-xs-4">
                 <div class="item">
-                  <span><%= Proposal.where(client_id: current_client.id).where(status: "pending").count %></span>Pending Proposals </div>
+                  <span><%= Proposal.where(client_id: @client.id).where(status: "pending").count %></span>Pending Proposals </div>
               </div>
               <div class="col-sm-2 col-xs-4">
                 <div class="item">
-                  <span><%= Proposal.where(client_id: current_client.id).where(status: "signed").count %></span>Signed Proposals </div>
+                  <span><%= Proposal.where(client_id: @client.id).where(status: "signed").count %></span>Signed Proposals </div>
               </div>
             </div>
           </div>
@@ -31,36 +31,41 @@
               </div>
               <table class="table table-no-border table-striped">
                 <tr>
-                  <td><a href="/clients/<%= current_client.id %>/edit">Edit Your Information</a></td>
+        <% if current_client || @is_clients_advisor %>
+            <% if current_client %>      
+              <td><a href="/clients/<%= @client.id %>/edit">Edit Your Information</a></td>
+            <% end %>
                 </tr>
                 <tr>
                   <th>
                     <i class="zmdi zmdi-face mr-1 color-warning"></i> Fullname</th>
-                  <td><%= current_client.name %></td>
+                  <td><%= @client.name %></td>
                 </tr>
                 <tr>
                   <th>
                     <i class="zmdi zmdi-email mr-1 color-primary"></i> Email</th>
                   <td>
-                    <a href="#"><%= current_client.email %></a>
+                    <a href="#"><%= @client.email %></a>
                   </td>
                 </tr>
                 <tr>
                   <th>
                     <i class="zmdi zmdi-link mr-1 color-danger"></i> Phone</th>
-                  <td><%= current_client.phone %></td>
+                  <td><%= @client.phone %></td>
                 </tr>
                 <tr>
                   <th>
                     <i class="zmdi zmdi-calendar mr-1 color-info"></i> Member Since</th>
-                  <td><%= (current_client.created_at).strftime("%m/%d/%Y") %></td>
+                  <td><%= (@client.created_at).strftime("%m/%d/%Y") %></td>
                 </tr>
               </table>
             </div>
             <div class="col-md-4">
               <div class="card-block">
+            <% if current_client %>  
                 <h2 class="color-primary">For All Advisors</h2>
                 <h4>Please <a href="/advisors">Click Here</a></h4>
+            <% end %>
                 <div class="media mb-3 hidden">
                   <div class="media-left">
                     <a href="#">
@@ -101,15 +106,16 @@
             </div>
             <div class="col-md-4">
               <div class="card-block">
+        <% if current_client %>
                 <h2 class="color-primary">Advisors</h2>
                 <div class="ms-media-list">
                   <div class="media">
                     <div class="media-left media-middle">
                       <a href="#">
-                    <% if @advis1 %><img class="media-object" src="<%= @advis1.logo %>"> </a>
+                    <% if @advis1 && current_client%><img class="media-object" src="<%= @advis1.logo %>"> </a>
                     <% end %>
                     </div>
-                    <% if @advis1 %>
+                    <% if @advis1 && current_client %>
                     <div class="media-body">
                       <h4 class="media-heading color-warning"><%= @advis1.name %></h4>
                       <a href="advisors/<%= @advis1.email %>"><%= @advis1.email %></a>
@@ -128,7 +134,7 @@
                   <% end %>
                   </div>
                   <div class="media">
-                  <% if @advis2 %>
+                  <% if @advis2 && current_client %>
                     <div class="media-left media-middle">
                       <a href="#">
                         <img class="media-object" src="<%= @advis2.logo %>"> </a>
@@ -151,7 +157,7 @@
                   <% end %>
                   </div>
                   <div class="media">
-                    <% if @advis2 %>
+                    <% if @advis3 && current_client %>
                     <div class="media-left media-middle">
                       <a href="#">
                         <img class="media-object" src="<%= @advis3.logo %>"> </a>
@@ -174,11 +180,13 @@
                     <% end %>
                   </div>
                 </div>
+            <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
+        <% end %>
       
 <script src="/assets/js/plugins.min.js"></script>
 <script src="/assets/js/app.min.js"></script>

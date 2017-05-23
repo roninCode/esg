@@ -12,6 +12,24 @@ class AdvisorsController < ApplicationController
 
   def show
     @advisor = Advisor.find_by(id: params[:id])
+    @total_clients = Invitation.where(advisor_id: @advisor.id).where(status: "accepted").count
+    @invitations = Invitation.where(advisor_id: @advisor.id)
+    
+    
+
+    @clients = []
+    @invitations.each do |invit|
+      @clients << Client.find_by(id: invit.client_id)
+    end
+    if @clients[0]
+      @client1 = @clients[0]
+    end
+    if @clients[1]
+      @client2 = @clients[0]
+    end
+    if @clients[2]
+      @client3 = @clients[2]
+    end
     render 'show.html.erb'
   end
 
@@ -23,14 +41,14 @@ class AdvisorsController < ApplicationController
   def update
     @advisor = Advisor.find_by(id: params[:id])
     if @advisor.update(
-        name: params[:name],
-        company: params[:company],
-        phone: params[:phone],
-        email: params[:email],
-        logo: params[:logo],
-        tags: params[:tags],
-        zip_code: params[:zip_code]
-      )
+      name: params[:name],
+      company: params[:company],
+      phone: params[:phone],
+      email: params[:email],
+      logo: params[:logo],
+      tags: params[:tags],
+      zip_code: params[:zip_code]
+    )
       flash[:info] = "You just updated this advisor"
       redirect_to "/advisors/#{@advisor.id}"
     else

@@ -12,8 +12,16 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find_by(id: params[:id])
-    @invitations = Invitation.where(client_id: current_client.id)
+    @invitations = Invitation.where(client_id: @client.id)
     @advisors = []
+    @is_clients_advisor = false
+    if !current_client
+      @invitations.each do |invit|
+        if current_advisor.id == invit.advisor_id
+          @is_clients_advisor = true
+        end
+      end
+    end
     @invitations.each do |invit|
       @advisors << Advisor.find_by(id: invit.advisor_id)
     end

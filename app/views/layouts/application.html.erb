@@ -458,6 +458,9 @@
                   <% if current_client %>
                     <li><a href="/clients/<%= current_client.id %>">Your Profile</a></li>
                   <% end %>
+                  <% if current_advisor %>
+                    <li><a href="/advisors/<%= current_advisor.id %>">Your Profile</a></li>
+                  <% end %>
                     <li><a href="/invitations">Invitations</a></li>
                     <li><a href="/questionnaires">Questionnaires</a></li>
                     <li><a href="/proposals">Proposals</a></li>

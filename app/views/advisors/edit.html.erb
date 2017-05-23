@@ -1,3 +1,4 @@
+<% if current_advisor.id == @advisor.id %>
 <%= form_tag("/advisors/#{@advisor.id}", method: "patch") do %>
 
   <label for="name">Name</label>
@@ -42,8 +43,9 @@
       <input type="submit" value="Edit this Advisor">
     </div>
 <% end %>
-
-<h4>Want to Delete this Advisor?</h4>
-<%= form_tag "/advisors/#{@advisor.id}", method: :delete do %>
+<br><br>
+<h4>Want to Delete Your Account?</h4>
+<%= form_tag("/advisors/#{@advisor.id}", method: :delete, data: {confirm: "Are you sure you want to delete your account?"}) do %>
   <input type="submit" value="This will delete this Advisor">
+<% end %>
 <% end %>
