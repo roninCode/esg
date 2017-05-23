@@ -1,12 +1,15 @@
 function drawChart() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Investment Type', 'Percentage'],
-    ['Green Bonds',     37],
-    ['ETFs',     13],
-    ['Small Cap',  10],
-    ['Mid Cap', 20],
-    ['Large Cap',    20]
+    ['Investment Type', 'Weight'],
+    [' DFA Emerging Markets Social Core Equity Portfolio', .03],
+    ['DFA US Sustainability Core 1 Portfolio', .06],
+    ['DFA International Sustainability Core 1 Portfolio', .05],
+    ['DFA Social Fixed Income Portfolio', .08],
+    ['DFA US Social Core Equity 2 Portfolio', .01],
+    ['Global X Concious Companies ETF', .02],
+    ['VanEck Green Bond ETF', .04],
+    ['DFA International Social Core Equity Portfolio', .02]
   ]);
 
   var options = {
@@ -22,12 +25,15 @@ function drawChart() {
 function drawChart1() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Investment Type', 'Percentage'],
-    ['Green Bonds',     37],
-    ['ETFs',     13],
-    ['Small Cap',  10],
-    ['Mid Cap', 20],
-    ['Large Cap',    20]
+    ['Investment Type', 'Weight'],
+    [' DFA Emerging Markets Social Core Equity Portfolio', .03],
+    ['DFA US Sustainability Core 1 Portfolio', .06],
+    ['DFA International Sustainability Core 1 Portfolio', .05],
+    ['DFA Social Fixed Income Portfolio', .08],
+    ['DFA US Social Core Equity 2 Portfolio', .01],
+    ['Global X Concious Companies ETF', .02],
+    ['VanEck Green Bond ETF', .04],
+    ['DFA International Social Core Equity Portfolio', .02]
   ]);
 
   var options = {
@@ -43,12 +49,15 @@ function drawChart1() {
 function drawChart2() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Investment Type', 'Percentage'],
-    ['Green Bonds',     37],
-    ['ETFs',     13],
-    ['Small Cap',  10],
-    ['Mid Cap', 20],
-    ['Large Cap',    20]
+    ['Investment Type', 'Weight'],
+    [' DFA Emerging Markets Social Core Equity Portfolio', .03],
+    ['DFA US Sustainability Core 1 Portfolio', .06],
+    ['DFA International Sustainability Core 1 Portfolio', .05],
+    ['DFA Social Fixed Income Portfolio', .08],
+    ['DFA US Social Core Equity 2 Portfolio', .01],
+    ['Global X Concious Companies ETF', .02],
+    ['VanEck Green Bond ETF', .04],
+    ['DFA International Social Core Equity Portfolio', .02]
   ]);
 
   var options = {
@@ -64,16 +73,19 @@ function drawChart2() {
 function drawChart3() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Investment Type', 'Percentage'],
-    ['Green Bonds',     37],
-    ['ETFs',     13],
-    ['Small Cap',  10],
-    ['Mid Cap', 20],
-    ['Large Cap',    20]
+    ['Investment Type', 'Weight'],
+    [' DFA Emerging Markets Social Core Equity Portfolio', .03],
+    ['DFA US Sustainability Core 1 Portfolio', .06],
+    ['DFA International Sustainability Core 1 Portfolio', .05],
+    ['DFA Social Fixed Income Portfolio', .08],
+    ['DFA US Social Core Equity 2 Portfolio', .01],
+    ['Global X Concious Companies ETF', .02],
+    ['VanEck Green Bond ETF', .04],
+    ['DFA International Social Core Equity Portfolio', .02]
   ]);
 
   var options = {
-    title: 'High Risk Model',
+    title: 'Elevated Risk Model',
     is3D: true
   };
 
@@ -85,12 +97,15 @@ function drawChart3() {
 function drawChart4() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Investment Type', 'Percentage'],
-    ['Green Bonds',     37],
-    ['ETFs',     13],
-    ['Small Cap',  10],
-    ['Mid Cap', 20],
-    ['Large Cap',    20]
+    ['Investment Type', 'Weight'],
+    [' DFA Emerging Markets Social Core Equity Portfolio', .03],
+    ['DFA US Sustainability Core 1 Portfolio', .06],
+    ['DFA International Sustainability Core 1 Portfolio', .05],
+    ['DFA Social Fixed Income Portfolio', .08],
+    ['DFA US Social Core Equity 2 Portfolio', .01],
+    ['Global X Concious Companies ETF', .02],
+    ['VanEck Green Bond ETF', .04],
+    ['DFA International Social Core Equity Portfolio', .02]
   ]);
 
   var options = {
@@ -102,14 +117,29 @@ function drawChart4() {
 
   chart.draw(data, options);
 }
+
 $(document).ready(function(){
-
   google.charts.load('current', {'packages':['corechart']});
-  google.charts.setOnLoadCallback(drawChart);
-  google.charts.setOnLoadCallback(drawChart1);
-  google.charts.setOnLoadCallback(drawChart2);
-  google.charts.setOnLoadCallback(drawChart3);
-  google.charts.setOnLoadCallback(drawChart4);
-// your code here
-
+  if (window.location.href === "http://localhost:3000/risk_models#") {
+    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart1);
+    google.charts.setOnLoadCallback(drawChart2);
+    google.charts.setOnLoadCallback(drawChart3);
+    google.charts.setOnLoadCallback(drawChart4);
+  } 
+  else if (window.location.href === "http://localhost:3000/risk_models/1#") { 
+    google.charts.setOnLoadCallback(drawChart);
+  }
+  else if (window.location.href === "http://localhost:3000/risk_models/2#") {
+    google.charts.setOnLoadCallback(drawChart1);
+  }
+  else if (window.location.href === "http://localhost:3000/risk_models/3#") {
+    google.charts.setOnLoadCallback(drawChart2);
+  }
+  else if (window.location.href === "http://localhost:3000/risk_models/4#") {
+    google.charts.setOnLoadCallback(drawChart3);
+  }
+  else if (window.location.href === "http://localhost:3000/risk_models/5#") {
+    google.charts.setOnLoadCallback(drawChart4);  
+  }
 });

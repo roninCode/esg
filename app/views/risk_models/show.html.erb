@@ -11,17 +11,59 @@ $(document).ready(function(){
     }
 });
 </script>
+<!-- 
+<div class="hidden" id="piechart">
+</div>
+<div class="hidden" id="piechart1">
+</div>
+<div class="hidden" id="piechart2">
+</div>
+<div class="hidden" id="piechart3">
+</div>
+<div class="hidden" id="piechart4">
+</div> -->
 
-<h3>Show me this Singular Risk Model</h3>
+<div class="container container-fluid">
+  <div class="row well">
+    <div class="col-sm-9" id="<%= @id_chart %>" style="width: 800px; height: 500px;">
+    </div>
+    <div class="col-sm-3">
+      <h3><%= @risk_model.name %></h3>
+      <p>Designed for those who:</p> 
+      <ul> 
+        <% if @risk_model.risk_level == 1 %>
+          <li>Are retiring in 5 years or less</li>
+          <li>Want the most secure portfolio with the lowest possible volitility</li>
+          <li>Are comfortable with modest returns on investment</li>
+        <% elsif @risk_model.risk_level == 2 %>
+          <li>Are retiring in more than 5 years</li>
+          <li>Want a secure portfolio with moderate volitility</li>
+          <li>Are willing to accept temporary drops in portfolio value</li>
+          <li>Over a 10-15 year period you would expect higher returns than the Mild Risk Model</li>
+        <% elsif @risk_model.risk_level == 3 %>
+          <li>Are retiring in more than 5 years</li>
+          <li>Want a secure portfolio with moderate volitility</li>
+          <li>Are willing to accept temporary drops in portfolio value</li>
+          <li>Over a 10-15 year period you would expect higher returns than the Mild Risk Model</li>
+        <% elsif @risk_model.risk_level == 4 %>
+          <li>Are retiring in more than 5 years</li>
+          <li>Want a secure portfolio with an elevated level of volitility</li>
+          <li>Are willing to accept temporary drops in portfolio value</li>
+          <li>Over a 10-15 year period you would expect higher returns than the Moderate Risk Model</li>
+        <% elsif @risk_model.risk_level == 5 %>
+          <li>Are retiring in more than 5 years</li>
+          <li>Are willing to accept temporary, yet large drops in portfolio value</li>
+          <li>Over a 10-15 year period you would expect the highest returns from this model</li>
+        <% end %>
+        <br>
+        <p>Go back to all the <a href="/risk_models"> risk models</a></p>
+      </ul>
+      <br>
+    <p>This model is made of:</p> <p><%= @risk_model.stocks %>% Stocks, <%= @risk_model.bonds %>% Bonds</p>
+    <br>
+    </div>
+  </div>
+</div>
+<br>
+<br>
 
-  <p>Name: <%= @risk_model.name %></p>
-  <p>Risk_level: <%= @risk_model.risk_level %></p>
-  <p>Description: <%= @risk_model.description %></p>
-  <p>Stocks: %<%= @risk_model.stocks %></p>
-  <p>Bonds: %<%= @risk_model.bonds %></p>  
-  <p>Companies: <%= @risk_model.companies %></p>
-  <p>Etfs: <%= @risk_model.etfs %></p>
-  
-  <hr>
-
-<div id="<%= @id_chart %>" style="width: 900px; height: 500px; border-radius: 50px;"></div>

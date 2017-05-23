@@ -1,6 +1,6 @@
 <div class="container-fluid">
 <% if current_client && @proposals.empty? %>
-  <h3>Please fill out a Questionnaire to get a proposal</h3>
+  <h3 class="centered_text">Please fill out a Questionnaire to get a proposal</h3>
   <p>Select Options in the bar above</p>
   <p>Then click on Questionnaires and fill out a risk-capacity questionnaire</p>
   <p>** If you have multiple advisors make sure to select the correct one before submission**</p>
@@ -14,11 +14,16 @@
   <h5>Once they've submitted a questionnaire we'll automatically generate a customized proposal for them and you can see it here</h5>
 
 <% else %>
-<h3>All the Proposals</h3>  
+<h2 class="centered_text">Your Proposals</h2>  
   <% @proposals.each_slice(3) do |proposal3| %>
     <div class="row">
       <% proposal3.each do |proposal| %>
-        <div class="col-md-4 well">
+        <div class="col-md-4 well">        
+          <p>Advisor Name: <%= Advisor.find_by(id: proposal.advisor_id).name %></p>
+          <p>Advisor ID:<%= proposal.advisor_id %></p>
+          <p>Proposal ID: <%= proposal.id %></p>
+          <p>Risk Model ID:<%= proposal.risk_model_id %></p>
+          <p>Status: <h3 class="centered_text"><%= proposal.status %></h3></p>
           <% if proposal.status == "signed" %>
             <a href='/proposals/<%= proposal.id %>'>View this Signed Proposal</a>
           <% elsif current_client %>
@@ -26,16 +31,6 @@
           <% elsif current_advisor %>
             <a href='/proposals/<%= proposal.id %>'>View Pending Proposal</a>
           <% end %>
-
-          <p>Proposal ID: <%= proposal.id %></p>
-          <p>Client ID: <%= proposal.client_id %></p>
-          <p>Client Name: <%= Client.find_by(id: proposal.client_id).name %></p>
-          <br>
-          <p>Advisor ID: <%= Advisor.find_by(id: proposal.advisor_id).name %></p>
-          <p>Advisor Name:<%= proposal.advisor_id %></p>
-
-          <p>Risk Model ID:<%= proposal.risk_model_id %></p>
-          <p>Status: <h3><%= proposal.status %></h3></p>
           
           <% if current_advisor %>  
             <a href="/proposals/<%= proposal.id %>/edit">Edit/Delete this Proposal</a>
