@@ -22,12 +22,12 @@ function drawChart() {
 function drawChart1() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['Work',     11],
-    ['Eat',      2],
-    ['Commute',  2],
-    ['Watch TV', 2],
-    ['Sleep',    7]
+    ['Investment Type', 'Percentage'],
+    ['Green Bonds',     37],
+    ['ETFs',     13],
+    ['Small Cap',  10],
+    ['Mid Cap', 20],
+    ['Large Cap',    20]
   ]);
 
   var options = {
@@ -43,12 +43,12 @@ function drawChart1() {
 function drawChart2() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['Work',     11],
-    ['Eat',      2],
-    ['Commute',  2],
-    ['Watch TV', 2],
-    ['Sleep',    7]
+    ['Investment Type', 'Percentage'],
+    ['Green Bonds',     37],
+    ['ETFs',     13],
+    ['Small Cap',  10],
+    ['Mid Cap', 20],
+    ['Large Cap',    20]
   ]);
 
   var options = {
@@ -64,12 +64,12 @@ function drawChart2() {
 function drawChart3() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['Work',     11],
-    ['Eat',      2],
-    ['Commute',  2],
-    ['Watch TV', 2],
-    ['Sleep',    7]
+    ['Investment Type', 'Percentage'],
+    ['Green Bonds',     37],
+    ['ETFs',     13],
+    ['Small Cap',  10],
+    ['Mid Cap', 20],
+    ['Large Cap',    20]
   ]);
 
   var options = {
@@ -85,12 +85,12 @@ function drawChart3() {
 function drawChart4() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['Work',     11],
-    ['Eat',      2],
-    ['Commute',  2],
-    ['Watch TV', 2],
-    ['Sleep',    7]
+    ['Investment Type', 'Percentage'],
+    ['Green Bonds',     37],
+    ['ETFs',     13],
+    ['Small Cap',  10],
+    ['Mid Cap', 20],
+    ['Large Cap',    20]
   ]);
 
   var options = {
@@ -102,10 +102,14 @@ function drawChart4() {
 
   chart.draw(data, options);
 }
+$(document).ready(function(){
 
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-google.charts.setOnLoadCallback(drawChart1);
-google.charts.setOnLoadCallback(drawChart2);
-google.charts.setOnLoadCallback(drawChart3);
-google.charts.setOnLoadCallback(drawChart4);
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  google.charts.setOnLoadCallback(drawChart1);
+  google.charts.setOnLoadCallback(drawChart2);
+  google.charts.setOnLoadCallback(drawChart3);
+  google.charts.setOnLoadCallback(drawChart4);
+// your code here
+
+});

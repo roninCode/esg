@@ -6,6 +6,17 @@ class RiskModelsController < ApplicationController
 
   def show
     @risk_model = RiskModel.find_by(id: params[:id])
+    if @risk_model.risk_level == 1
+      @id_chart = "piechart"
+    elsif @risk_model.risk_level == 2
+      @id_chart = "piechart1"
+    elsif @risk_model.risk_level == 3
+      @id_chart = "piechart2"
+    elsif @risk_model.risk_level == 4
+      @id_chart = "piechart3"
+    elsif @risk_model.risk_level == 5
+      @id_chart = "piechart4"
+    end
     render 'show.html.erb'
   end
 

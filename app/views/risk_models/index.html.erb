@@ -1,4 +1,34 @@
+<script type="text/javascript">
+$(document).ready(function(){    
+    //Check if the current URL contains '#'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#".
+        url = document.URL+"#";
+        location = "#";
+
+        //Reload the page
+        location.reload(true);
+    }
+});
+</script>
+
+
 <h3>All the Risk Models</h3>
+
+<div id="piechart" style="width: 900px; height: 500px;"></div>
+  <p>See this<a href="/risk_models/1"> Low Risk Chart</a></p>
+
+<div id="piechart1" style="width: 900px; height: 500px;"></div>
+  <p>See this<a href="/risk_models/2"> Mild Risk Chart</a></p>
+
+<div id="piechart2" style="width: 900px; height: 500px;"></div>
+  <p>See this<a href="/risk_models/3"> Moderate Risk Chart</a></p>
+
+<div id="piechart3" style="width: 900px; height: 500px;"></div>
+  <p>See this<a href="/risk_models/4"> High Risk Chart</a></p>
+
+<div id="piechart4" style="width: 900px; height: 500px;"></div>
+  <p>See this<a href="/risk_models/5"> Highest Risk Chart</a></p>
 
 <% @risk_models.each do |risk_model| %>
   <p>Name: <%= risk_model.name %></p>
@@ -11,8 +41,3 @@
   <hr>
 <% end %>
 
-<div id="piechart" style="width: 900px; height: 500px;"></div>
-<div id="piechart1" style="width: 900px; height: 500px;"></div>
-<div id="piechart2" style="width: 900px; height: 500px;"></div>
-<div id="piechart3" style="width: 900px; height: 500px;"></div>
-<div id="piechart4" style="width: 900px; height: 500px;"></div>

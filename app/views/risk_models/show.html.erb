@@ -1,3 +1,17 @@
+<script type="text/javascript">
+$(document).ready(function(){    
+    //Check if the current URL contains '#'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#".
+        url = document.URL+"#";
+        location = "#";
+
+        //Reload the page
+        location.reload(true);
+    }
+});
+</script>
+
 <h3>Show me this Singular Risk Model</h3>
 
   <p>Name: <%= @risk_model.name %></p>
@@ -9,3 +23,5 @@
   <p>Etfs: <%= @risk_model.etfs %></p>
   
   <hr>
+
+<div id="<%= @id_chart %>" style="width: 900px; height: 500px;"></div>
