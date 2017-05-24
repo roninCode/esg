@@ -16,7 +16,7 @@
           <div class="col-md-6">
             <p>Advisor: <%= Advisor.find_by(id: questionnaire.advisor_id).name %></p>
             <p>Company: <%= Advisor.find_by(id: questionnaire.advisor_id).company %></p>
-            <p>Risk Score: <%= questionnaire.average.to_i %></p>
+            <p>Risk Score: <%= questionnaire.average.to_i %>%</p>
             <p>Completed: <%= (questionnaire.created_at).strftime("%b %d, %Y") %></p>
             <% if Proposal.find_by(questionnaire_id: questionnaire.id) %>
               <a href="/proposals/<%= Proposal.find_by(questionnaire_id: questionnaire.id).id %>">See your Proposal Here</a>

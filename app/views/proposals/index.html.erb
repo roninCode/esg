@@ -22,7 +22,7 @@
         <div class="col-md-4 well">        
           <p>Advisor Name: <%= Advisor.find_by(id: proposal.advisor_id).name %></p>
           <p>Advisor ID:<%= proposal.advisor_id %></p>
-          <p>Proposal ID: <%= proposal.id %></p>
+          <p>Risk Model: <%= RiskModel.find_by(id: proposal.risk_model_id).name %></p>
           <p>Risk Model ID:<%= proposal.risk_model_id %></p>
           <p>Status: <h3 class="centered_text"><%= proposal.status %></h3></p>
           <% if proposal.status == "signed" %>
