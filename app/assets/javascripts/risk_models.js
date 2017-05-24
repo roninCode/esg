@@ -2,13 +2,13 @@ function drawChart() {
 
   var data = google.visualization.arrayToDataTable([
     ['Investment Type', 'Weight'],
-    [' DFA Emerging Markets Social Core Equity Portfolio', .03],
-    ['DFA US Sustainability Core 1 Portfolio', .06],
-    ['DFA International Sustainability Core 1 Portfolio', .05],
-    ['DFA Social Fixed Income Portfolio', .08],
-    ['DFA US Social Core Equity 2 Portfolio', .01],
-    ['Global X Concious Companies ETF', .02],
-    ['VanEck Green Bond ETF', .04],
+    [' DFA Emerging Markets Social Core Equity Portfolio', .01],
+    ['DFA US Sustainability Core 1 Portfolio', .1],
+    ['DFA International Sustainability Core 1 Portfolio', .03],
+    ['DFA Social Fixed Income Portfolio', .6],
+    ['DFA US Social Core Equity 2 Portfolio', .03],
+    ['Global X Concious Companies ETF', .01],
+    ['VanEck Green Bond ETF', .2],
     ['DFA International Social Core Equity Portfolio', .02]
   ]);
 
@@ -26,14 +26,14 @@ function drawChart1() {
 
   var data = google.visualization.arrayToDataTable([
     ['Investment Type', 'Weight'],
-    [' DFA Emerging Markets Social Core Equity Portfolio', .03],
-    ['DFA US Sustainability Core 1 Portfolio', .06],
-    ['DFA International Sustainability Core 1 Portfolio', .05],
-    ['DFA Social Fixed Income Portfolio', .08],
-    ['DFA US Social Core Equity 2 Portfolio', .01],
+    [' DFA Emerging Markets Social Core Equity Portfolio', .02],
+    ['DFA US Sustainability Core 1 Portfolio', .2],
+    ['DFA International Sustainability Core 1 Portfolio', .06],
+    ['DFA Social Fixed Income Portfolio', .45],
+    ['DFA US Social Core Equity 2 Portfolio', .06],
     ['Global X Concious Companies ETF', .02],
-    ['VanEck Green Bond ETF', .04],
-    ['DFA International Social Core Equity Portfolio', .02]
+    ['VanEck Green Bond ETF', .15],
+    ['DFA International Social Core Equity Portfolio', .04]
   ]);
 
   var options = {
@@ -50,14 +50,14 @@ function drawChart2() {
 
   var data = google.visualization.arrayToDataTable([
     ['Investment Type', 'Weight'],
-    [' DFA Emerging Markets Social Core Equity Portfolio', .03],
-    ['DFA US Sustainability Core 1 Portfolio', .06],
-    ['DFA International Sustainability Core 1 Portfolio', .05],
-    ['DFA Social Fixed Income Portfolio', .08],
-    ['DFA US Social Core Equity 2 Portfolio', .01],
-    ['Global X Concious Companies ETF', .02],
-    ['VanEck Green Bond ETF', .04],
-    ['DFA International Social Core Equity Portfolio', .02]
+    [' DFA Emerging Markets Social Core Equity Portfolio', .05],
+    ['DFA US Sustainability Core 1 Portfolio', .26],
+    ['DFA International Sustainability Core 1 Portfolio', .14],
+    ['DFA Social Fixed Income Portfolio', .3],
+    ['DFA US Social Core Equity 2 Portfolio', .05],
+    ['Global X Concious Companies ETF', .05],
+    ['VanEck Green Bond ETF', .1],
+    ['DFA International Social Core Equity Portfolio', .05]
   ]);
 
   var options = {
@@ -74,14 +74,14 @@ function drawChart3() {
 
   var data = google.visualization.arrayToDataTable([
     ['Investment Type', 'Weight'],
-    [' DFA Emerging Markets Social Core Equity Portfolio', .03],
-    ['DFA US Sustainability Core 1 Portfolio', .06],
-    ['DFA International Sustainability Core 1 Portfolio', .05],
-    ['DFA Social Fixed Income Portfolio', .08],
-    ['DFA US Social Core Equity 2 Portfolio', .01],
-    ['Global X Concious Companies ETF', .02],
-    ['VanEck Green Bond ETF', .04],
-    ['DFA International Social Core Equity Portfolio', .02]
+    [' DFA Emerging Markets Social Core Equity Portfolio', .07],
+    ['DFA US Sustainability Core 1 Portfolio', .3],
+    ['DFA International Sustainability Core 1 Portfolio', .18],
+    ['DFA Social Fixed Income Portfolio', .15],
+    ['DFA US Social Core Equity 2 Portfolio', .1],
+    ['Global X Concious Companies ETF', .07],
+    ['VanEck Green Bond ETF', .05],
+    ['DFA International Social Core Equity Portfolio', .08]
   ]);
 
   var options = {
@@ -98,14 +98,12 @@ function drawChart4() {
 
   var data = google.visualization.arrayToDataTable([
     ['Investment Type', 'Weight'],
-    [' DFA Emerging Markets Social Core Equity Portfolio', .03],
-    ['DFA US Sustainability Core 1 Portfolio', .06],
-    ['DFA International Sustainability Core 1 Portfolio', .05],
-    ['DFA Social Fixed Income Portfolio', .08],
-    ['DFA US Social Core Equity 2 Portfolio', .01],
-    ['Global X Concious Companies ETF', .02],
-    ['VanEck Green Bond ETF', .04],
-    ['DFA International Social Core Equity Portfolio', .02]
+    [' DFA Emerging Markets Social Core Equity Portfolio', .1],
+    ['DFA US Sustainability Core 1 Portfolio', .35],
+    ['DFA International Sustainability Core 1 Portfolio', .21],
+    ['DFA US Social Core Equity 2 Portfolio', .13],
+    ['Global X Concious Companies ETF', .1],
+    ['DFA International Social Core Equity Portfolio', .11]
   ]);
 
   var options = {

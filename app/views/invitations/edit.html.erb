@@ -1,33 +1,20 @@
 <h3>Edit this Invitation</h3>
 
 <%= form_tag("/invitations/#{@invitation.id}", method: "patch") do %>
-  <label for="advisor_id"> Advisor ID </label>
-  <div>
-      <input type="text" name="advisor_id" value="<%= @invitation.advisor_id %>">    
-    </div>
-  
-  <label for="client_id"> Client ID </label>
-    <div>
-      <input type="text" name="client_id" value="<%= @invitation.client_id %>">    
-    </div>
-  <br>
   <h4>Current Status: <%= @invitation.status %></h4>
   <label for="status"> Status </label>
     <div>
       <input type="radio" name="status" value="pending" checked> Pending<br>
-      <input type="radio" name="status" value="accepted"> Accepted<br>
       <input type="radio" name="status" value="expired"> Expired   
     </div>
     <br>    
 
     <div>
-      <input type="submit">
+      <input type="submit" value="Edit this Invitation">
     </div>
 <% end %>
 
-<hr>
-<br><br>
 <h4>Want to delete this Invitation?</h4>
 <%= form_tag "/invitations/#{@invitation.id}", method: :delete do %>
-    <input type="submit" value="This will delete this Invitation">
+    <input type="submit" value="Delete this Invitation">
 <% end %>
