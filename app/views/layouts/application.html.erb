@@ -390,6 +390,7 @@
                     </ul>
                   </li>
                   
+                <% if !current_advisor %>  
                   <li class="dropdown-submenu">
                     <a href="javascript:void(0)" class="has_children">Signup/Login</a>
                     <ul class="dropdown-menu dropdown-menu-left">
@@ -401,6 +402,7 @@
                       </li>
                     </ul>
                   </li>
+                <% end %>
                 </ul>
               </li>
               <li class="dropdown">
@@ -436,6 +438,7 @@
                       </li>
                     </ul>
                   </li>
+                <% if !current_client %>  
                   <li class="dropdown-submenu">
                     <a href="javascript:void(0)" class="has_children">Signup/Login</a>
                     <ul class="dropdown-menu dropdown-menu-left">
@@ -447,6 +450,7 @@
                       </li>
                     </ul>
                   </li>
+                <% end %>
                 </ul>
               </li>
             <% if session[:advisor_id] || session[:client_id] %>
