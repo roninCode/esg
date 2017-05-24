@@ -27,7 +27,7 @@
     <div class="row">
       <% advisor3.each do |advisor| %>
         <div class="col-md-4 well">
-          <div><%= image_tag(advisor.logo, :class => "advisor_logo") %></div>
+          <div><a href="/advisors/<%= advisor.id %>"><%= image_tag(advisor.logo, :class => "advisor_logo") %></a></div>
           <br>
           <p><span class="advisor_email_hover"><%= advisor.name %></span> from <span class="advisor_email_hover"><%= advisor.company %></span></p>
           <p>Phone: <span class="advisor_email_hover"><%= advisor.phone %></span></p> 

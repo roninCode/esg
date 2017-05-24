@@ -62,11 +62,13 @@
             </div>
             <div class="col-md-4">
               <div class="card-block">
+              <% if current_advisor && current_advisor.id == @advisor.id %>
                 <h2>Want All Your Clients?</h2>
                 <h4>Click <a href="/clients">here</a></h4>
                 <br>
                 <h2>Your Proposals?</h2>
                 <h4>Click <a href="/proposals">here</a></h4>
+              <% end %>  
                 <div class="media mb-3 hidden">
                   <div class="media-left">
                     <a href="#">
