@@ -1,5 +1,5 @@
 <div class="container-fluid">
-<h2>Hello <%= current_client.name %></h2>
+<h2 class="centered_text">Hello <%= current_client.name %>!</h2>
 
 <% if @client_advisors.empty? %>
   <h3>Thank you for joining EthiCapital!</h3>
@@ -21,18 +21,19 @@
   <br>
 <% else %>
 
-<h3>Here are your Advisors</h3>
+<h3 class="centered_text">Here are your Advisors</h3>
 <hr>
   <% @client_advisors.each_slice(3) do |advisor3| %>
     <div class="row">
       <% advisor3.each do |advisor| %>
         <div class="col-md-4 well">
-          <h5><%= @invitation.where(advisor_id: advisor.id)[0].status.capitalize %></h5>
-          <p>ID: <%= advisor.id %></p>
-          <p><%= advisor.name %> from <%= advisor.company %></p>
-          <p>Phone: <%= advisor.phone %></p> 
-          <p>Email: <%= advisor.email %></p>
-          <p>Areas of Expertise: <%= advisor.tags %></p>
+          <div><%= image_tag(advisor.logo, :class => "advisor_logo") %></div>
+          <br>
+          <p><span class="advisor_email_hover"><%= advisor.name %></span> from <span class="advisor_email_hover"><%= advisor.company %></span></p>
+          <p>Phone: <span class="advisor_email_hover"><%= advisor.phone %></span></p> 
+          <p>Email: <span class="advisor_email_hover"><%= advisor.email %></span></p>
+          <p>Areas of Expertise: <span class="advisor_email_hover"><%= advisor.tags %></span></p>
+          <h5>Invitation: <%= @invitation.where(advisor_id: advisor.id)[0].status.capitalize %></h5>
           <a href="advisors/<%= advisor.id %>">View this Advisor</a>
           <br>
          
@@ -55,7 +56,12 @@
           <% end %>
           
           <br>
-          <div><%= image_tag(advisor.logo, :class => "advisor_logo") %></div>
+       
+
+
+
+
+
         </div>
       <% end %>
     </div>
