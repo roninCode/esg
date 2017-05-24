@@ -257,11 +257,11 @@
       <nav class="navbar navbar-static-top yamm ms-navbar ms-navbar-dark">
         <div class="container container-full">
           <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
               <!-- <img src="assets/img/demo/logo-navbar.png" alt=""> -->
               <span class="ms-logo ms-logo-sm">E</span>
               <span class="ms-title">Ethi
-                <strong>Capital</strong>
+                <strong>Capital</strong>`
               </span>
             </a>
           </div>
@@ -276,20 +276,16 @@
                     <div class="ms-menu-double">
                       <ul class="ms-menu-double-main-menu">
                         <li class="active">
-                          <a href="#tab-1" data-hover="tab" data-toggle="tab">
+                          <a href="/about" data-hover="tab" data-toggle="tab">
                             <i class="zmdi zmdi-home"></i> About Us</a>
                         </li>
                         <li>
-                          <a href="#tab-2" data-hover="tab">
-                            <i class="zmdi zmdi-desktop-windows"></i>What is ESG?</a>
-                        </li>
-                        <li>
                           <a href="#tab-9" data-hover="tab">
-                            <i class="zmdi zmdi-panorama-horizontal"></i>How ESG can help you</a>
+                            <i class="zmdi zmdi-panorama-horizontal"></i>Advisors</a>
                         </li>
                         <li>
                           <a href="#tab-8" data-hover="tab" data-toggle="tab">
-                            <i class="zmdi zmdi-account"></i>Power of Impact Investing</a>
+                            <i class="zmdi zmdi-account"></i>Clients</a>
                         </li>
                       </ul>
                       <div class="tab-content ms-menu-double-submenu-container">
@@ -301,12 +297,6 @@
                             <li>
                               <a href=/about>Meet the Team</a>
                             </li>
-                            <li>
-                              <a href="/about">Our Mission</a>
-                            </li>
-                            <li>
-                              <a href="/about">Our history</a>
-                            </li>
                           </ul>
                         </div>
                         <div class="tab-pane" id="tab-2">
@@ -317,140 +307,47 @@
                             <li>
                               <a href="/esg">History of ESG</a>
                             </li>
-                            <li>
-                              <a href="/esg">Who's doing it</a>
-                            </li>
                           </ul>
                         </div>
                         <div class="tab-pane" id="tab-9">
                           <ul class="ms-menu-double-submenu">
                             <li>
-                              <a href="/esg">Stronger Portfolios</a>
+                              <a href="/about">Our Services</a>
                             </li>
                             <li>
-                              <a href="/esg">Reduced Risk Exposure</a>
+                              <a href="/prices">Prices</a>
+                            </li>
+                          <% if !current_advisor %>
+                            <li>
+                              <a href="/signup_advisor">Signup</a>
                             </li>
                             <li>
-                              <a href="/esg">Economic Voting Power</a>
+                              <a href="/login">Login</a>
                             </li>
+                          <% end %>
                           </ul>
                         </div>
                         <div class="tab-pane" id="tab-8">
                           <ul class="ms-menu-double-submenu">
                             <li>
-                              <a href="/esg">General</a>
+                              <a href="/about">Our Services</a>
                             </li>
                             <li>
-                              <a href="/esg">Renewable Energy</a>
+                              <a href="/prices">Free for You!</a>
+                            </li>
+                          <% if !current_client %>  
+                            <li>
+                              <a href="/signup_client">Signup</a>
                             </li>
                             <li>
-                              <a href="/esg">Sustainable Business</a>
+                              <a href="/login">Login</a>
                             </li>
-                            <li>
-                              <a href="/esg">Fair Trade</a>
-                            </li>
+                          <% end %>
                           </ul>
                         </div>
                       </div>
                     </div>
                   </li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="javascript:void(0)" class="dropdown-toggle animated fadeIn animation-delay-5" data-toggle="dropdown" data-hover="dropdown" data-name="page">Advisor
-                  <i class="zmdi zmdi-chevron-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
-                  <li class="dropdown-submenu">
-                    <a href="javascript:void(0)" class="has_children">Advisor Services</a>
-                    <ul class="dropdown-menu dropdown-menu-left">
-                      <li>
-                        <a href="page-about.html">Proposal Generation</a>
-                      </li>
-                      <li>
-                        <a href="page-about2.html">Client Referrals</a>
-                      </li>
-                      <li>
-                        <a href="page-about3.html">ESG Portfolio Management</a>
-                      </li>
-                      <li>
-                        <a href="page-about4.html">Account Management</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="dropdown-submenu">
-                    <a href="javascript:void(0)" class="has_children">Pricing</a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="/prices">Membership costs</a>
-                      </li>
-                      <li>
-                        <a href="/prices">In house client referrals</a>
-                      </li>
-                    </ul>
-                  </li>
-                  
-                <% if !current_advisor %>  
-                  <li class="dropdown-submenu">
-                    <a href="javascript:void(0)" class="has_children">Signup/Login</a>
-                    <ul class="dropdown-menu dropdown-menu-left">
-                      <li>
-                        <a href="/signup_advisor">Signup Here</a>
-                      </li>
-                      <li>
-                        <a href="/login">Login </a>
-                      </li>
-                    </ul>
-                  </li>
-                <% end %>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="javascript:void(0)" class="dropdown-toggle animated fadeIn animation-delay-5" data-toggle="dropdown" data-hover="dropdown" data-name="page">Client
-                  <i class="zmdi zmdi-chevron-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
-                  <li class="dropdown-submenu">
-                    <a href="javascript:void(0)" class="has_children">Client Services</a>
-                    <ul class="dropdown-menu dropdown-menu-left">
-                      <li>
-                        <a href="/esg">Access to Ethical Investments</a>
-                      </li>
-                      <li>
-                        <a href="/prices">No cost to you!</a>
-                      </li>
-                      <li>
-                        <a href="/about">Work with your Financial Advisor</a>
-                      </li>
-                      <li>
-                        <a href="/search_advisors/new">Find a Financial Advisor</a>
-                    </ul>
-                  </li>
-                  
-                  <li class="dropdown-submenu">
-                    <a href="javascript:void(0)" class="has_children">Why Ethical Investments</a>
-                    <ul class="dropdown-menu dropdown-menu-left">
-                      <li>
-                        <a href="/esg">High Performance Portfolios</a>
-                      </li>
-                      <li>
-                        <a href="/esg">Power of Impact Investing</a>
-                      </li>
-                    </ul>
-                  </li>
-                <% if !current_client %>  
-                  <li class="dropdown-submenu">
-                    <a href="javascript:void(0)" class="has_children">Signup/Login</a>
-                    <ul class="dropdown-menu dropdown-menu-left">
-                      <li>
-                        <a href="/signup_client">Sign up</a>
-                      </li>
-                      <li>
-                        <a href="/login">Login</a>
-                      </li>
-                    </ul>
-                  </li>
-                <% end %>
                 </ul>
               </li>
             <% if session[:advisor_id] || session[:client_id] %>

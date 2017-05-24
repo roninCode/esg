@@ -4,6 +4,10 @@
 <% else %>
 <h2 class="centered_text">Here are your Questionnaires</h2>
 <br>
+<% if current_client %>
+  <a href='/questionnaires/new'><h3 class="centered_text">Fill out a Risk Questionnaire</h3></a>
+<% end %>
+<br>
 <% @questionnaires.each_slice(3) do |questionnaire3| %>
   <div class="row">
     <% questionnaire3.each do |questionnaire| %>
