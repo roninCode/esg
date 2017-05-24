@@ -23,7 +23,7 @@
             <% end %>
           </div>
           <div class="col-md-6">
-            <%= image_tag(Advisor.find_by(id: questionnaire.advisor_id).logo, :class => "advisor_logo") %>
+            <a href="/advisors/<%= Advisor.find_by(id: questionnaire.advisor_id).id %>"><%= image_tag(Advisor.find_by(id: questionnaire.advisor_id).logo, :class => "advisor_logo") %></a>
           </div>
         </div>
 
