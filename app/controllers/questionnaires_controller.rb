@@ -13,7 +13,7 @@ class QuestionnairesController < ApplicationController
   def new
     @advisors = []
     Invitation.all.each do |invitation|
-      if current_client && invitation.client_id == current_client.id
+      if current_client && invitation.client_id == current_client.id && invitation.status == "accepted"
         advisor = Advisor.find_by(id: invitation.advisor_id)
         @advisors << advisor
       end 
