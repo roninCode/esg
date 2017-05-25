@@ -26,7 +26,7 @@
           <p>Risk Model ID:<%= proposal.risk_model_id %></p>
           <p>Status: <h3 class="centered_text"><%= proposal.status %></h3></p>
           <% if proposal.status == "signed" %>
-            <a href='/proposals/<%= proposal.id %>'>View this Signed Proposal</a>
+            <a href='/proposals/<%= proposal.id %>'>View this Signed Proposal</a> 
           <% elsif current_client %>
             <a href='/proposals/<%= proposal.id %>'>View Pending / Upload Signed Proposal</a>
           <% elsif current_advisor %>
