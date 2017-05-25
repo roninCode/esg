@@ -24,6 +24,53 @@
       <p>Risk Model: <%= @proposal.risk_model_id %></p>
     </div>
     <div>
+      <h5>Distribution of Funds</h5>
+      <% if @risk_model.id == 1 %>
+        <p>' DFA Emerging Markets Social Core Equity Portfolio', .01</p>
+        <p>'DFA US Sustainability Core 1 Portfolio', .1</p>
+        <p>'DFA International Sustainability Core 1 Portfolio', .03</p>
+        <p>'DFA Social Fixed Income Portfolio', .6</p>
+        <p>'DFA US Social Core Equity 2 Portfolio', .03</p>
+        <p>'Global X Concious Companies ETF', .01</p>
+        <p>'VanEck Green Bond ETF', .2</p>
+        <p>'DFA International Social Core Equity Portfolio', .02</p>
+      <% elsif @risk_model.id == 2 %>
+        <p>' DFA Emerging Markets Social Core Equity Portfolio', .02</p>
+        <p>'DFA US Sustainability Core 1 Portfolio', .2</p>
+        <p>'DFA International Sustainability Core 1 Portfolio', .06</p>
+        <p>'DFA Social Fixed Income Portfolio', .45</p>
+        <p>'DFA US Social Core Equity 2 Portfolio', .06</p>
+        <p>'Global X Concious Companies ETF', .02</p>
+        <p>'VanEck Green Bond ETF', .15</p>
+        <p>'DFA International Social Core Equity Portfolio', .04</p>
+      <% elsif @risk_model.id == 3 %>
+        <p>' DFA Emerging Markets Social Core Equity Portfolio', .05</p>
+        <p>'DFA US Sustainability Core 1 Portfolio', .26</p>
+        <p>'DFA International Sustainability Core 1 Portfolio', .14</p>
+        <p>'DFA Social Fixed Income Portfolio', .3</p>
+        <p>'DFA US Social Core Equity 2 Portfolio', .05</p>
+        <p>'Global X Concious Companies ETF', .05</p>
+        <p>'VanEck Green Bond ETF', .1</p>
+        <p>'DFA International Social Core Equity Portfolio', .05</p>
+      <% elsif @risk_model.id == 4 %>
+        <p>' DFA Emerging Markets Social Core Equity Portfolio', .07</p>
+        <p>'DFA US Sustainability Core 1 Portfolio', .3</p>
+        <p>'DFA International Sustainability Core 1 Portfolio', .18</p>
+        <p>'DFA Social Fixed Income Portfolio', .15</p>
+        <p>'DFA US Social Core Equity 2 Portfolio', .1</p>
+        <p>'Global X Concious Companies ETF', .07</p>
+        <p>'VanEck Green Bond ETF', .05</p>
+        <p>'DFA International Social Core Equity Portfolio', .08</p>
+      <% elsif @risk_model.id == 5 %>
+        <p>' DFA Emerging Markets Social Core Equity Portfolio', .1</p>
+        <p>'DFA US Sustainability Core 1 Portfolio', .35</p>
+        <p>'DFA International Sustainability Core 1 Portfolio', .21</p>
+        <p>'DFA US Social Core Equity 2 Portfolio', .13</p>
+        <p>'Global X Concious Companies ETF', .1</p>
+        <p>'DFA International Social Core Equity Portfolio', .11</p>
+      <% end %>
+    </div>
+    <div>
       <h5>Approximate Account Size</h5>
       <p>Add how much a client wants to have?</p>
     </div>

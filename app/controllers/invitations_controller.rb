@@ -50,8 +50,6 @@ class InvitationsController < ApplicationController
   def update
     @invitation = Invitation.find_by(id: params[:id])
     if @invitation.update(
-      advisor_id: params[:advisor_id],
-      client_id: params[:client_id],
       status: params[:status]
     )
       flash[:info] = "You just updated this invitation"
