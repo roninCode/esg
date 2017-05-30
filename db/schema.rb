@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521132539) do
+ActiveRecord::Schema.define(version: 20170526175133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,30 +51,12 @@ ActiveRecord::Schema.define(version: 20170521132539) do
     t.integer  "risk_model_id"
     t.integer  "client_id"
     t.integer  "advisor_id"
+    t.integer  "invitation_id"
     t.string   "status"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "pdf"
     t.integer  "questionnaire_id"
-  end
-
-  create_table "questionnaires", force: :cascade do |t|
-    t.integer  "client_id"
-    t.integer  "question_1"
-    t.integer  "question_2"
-    t.integer  "question_3"
-    t.integer  "question_4"
-    t.integer  "question_5"
-    t.integer  "question_6"
-    t.integer  "question_7"
-    t.integer  "question_8"
-    t.integer  "question_9"
-    t.integer  "question_10"
-    t.integer  "question_11"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.decimal  "average"
-    t.integer  "advisor_id"
   end
 
   create_table "risk_models", force: :cascade do |t|
@@ -85,8 +67,8 @@ ActiveRecord::Schema.define(version: 20170521132539) do
     t.string   "etfs"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "stocks"
-    t.integer  "bonds"
+    t.string   "stocks"
+    t.string   "bonds"
   end
 
 end

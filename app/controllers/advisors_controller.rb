@@ -62,7 +62,7 @@ class AdvisorsController < ApplicationController
   end  
 
   def create
-    response = Unirest.get("https://gist.githubusercontent.com/dryan/7486408/raw/dda158f44480f8c433dc8fd1db9c07ed9aadf989/valid-zips.json").body
+    # response = Unirest.get("https://gist.githubusercontent.com/dryan/7486408/raw/dda158f44480f8c433dc8fd1db9c07ed9aadf989/valid-zips.json").body
 
     advisor = Advisor.new(
       name: params[:name],
@@ -75,7 +75,10 @@ class AdvisorsController < ApplicationController
       tags: params[:tags],
       zip_code: params[:zip_code]
     )
-    if response.include?(advisor.zip_code) && advisor.save
+    # Code below goes in line 80 (if line below && advisor.save)
+    # I don't have wifi and it's making a unirest call...stoping me from creating advisors.
+    # response.include?(advisor.zip_code) &&
+    if  advisor.save
       session[:advisor_id] = advisor.id
       flash[:info] = "Welcome to EthiCaptial!"
       redirect_to '/clients'
