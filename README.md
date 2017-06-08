@@ -11,10 +11,11 @@ EthiCapital connects financial advisors to existing or prospective clients based
 INSTALLATION:
 1) Clone this application into a directory (using git clone)
 2) bundle the gems
-3) rails db:seed
+3) rails db:create
+4) rails db:seed
  - this will allow you to have some examples of advisors, clients, and the risk models
  - ***Note*** The password for all clients and advisors is:    jamie
-4) rails s
+5) rails s
   - to view on http://localhost:3000
 
 
