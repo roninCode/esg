@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521132539) do
+ActiveRecord::Schema.define(version: 20170608204307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20170521132539) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "logo"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
     t.string   "zip_code"
     t.string   "tags"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "clients", force: :cascade do |t|
@@ -33,13 +33,12 @@ ActiveRecord::Schema.define(version: 20170521132539) do
     t.string   "email"
     t.string   "phone"
     t.integer  "risk_tolerance"
+    t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "password_digest"
   end
 
   create_table "invitations", force: :cascade do |t|
-    t.datetime "expiration"
     t.integer  "advisor_id"
     t.integer  "client_id"
     t.string   "status"
@@ -52,10 +51,10 @@ ActiveRecord::Schema.define(version: 20170521132539) do
     t.integer  "client_id"
     t.integer  "advisor_id"
     t.string   "status"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
     t.string   "pdf"
     t.integer  "questionnaire_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "questionnaires", force: :cascade do |t|
@@ -71,22 +70,22 @@ ActiveRecord::Schema.define(version: 20170521132539) do
     t.integer  "question_9"
     t.integer  "question_10"
     t.integer  "question_11"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.decimal  "average"
     t.integer  "advisor_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "risk_models", force: :cascade do |t|
     t.string   "name"
     t.integer  "risk_level"
-    t.text     "description"
+    t.string   "description"
     t.string   "companies"
     t.string   "etfs"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.integer  "stocks"
     t.integer  "bonds"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

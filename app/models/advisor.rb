@@ -12,4 +12,3 @@ class Advisor < ApplicationRecord
   validates :password, presence: true
   scoped_search on: [:tags]
 end
- 
