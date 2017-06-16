@@ -118,26 +118,26 @@ function drawChart4() {
 
 $(document).ready(function(){
   google.charts.load('current', {'packages':['corechart']});
-  if (window.location.href === "http://localhost:3000/risk_models#") {
+  if (window.location.href === "http://ethicapital.herokuapp.com/risk_models#") {
     google.charts.setOnLoadCallback(drawChart);
     google.charts.setOnLoadCallback(drawChart1);
     google.charts.setOnLoadCallback(drawChart2);
     google.charts.setOnLoadCallback(drawChart3);
     google.charts.setOnLoadCallback(drawChart4);
   } 
-  else if (window.location.href === "http://localhost:3000/risk_models/1#") { 
+  else if (window.location.href === "http://ethicapital.herokuapp.com/risk_models/1#") { 
     google.charts.setOnLoadCallback(drawChart);
   }
-  else if (window.location.href === "http://localhost:3000/risk_models/2#") {
+  else if (window.location.href === "http://ethicapital.herokuapp.com/risk_models/2#") {
     google.charts.setOnLoadCallback(drawChart1);
   }
-  else if (window.location.href === "http://localhost:3000/risk_models/3#") {
+  else if (window.location.href === "http://ethicapital.herokuapp.com/risk_models/3#") {
     google.charts.setOnLoadCallback(drawChart2);
   }
-  else if (window.location.href === "http://localhost:3000/risk_models/4#") {
+  else if (window.location.href === "http://ethicapital.herokuapp.com/risk_models/4#") {
     google.charts.setOnLoadCallback(drawChart3);
   }
-  else if (window.location.href === "http://localhost:3000/risk_models/5#") {
+  else if (window.location.href === "http://ethicapital.herokuapp.com/risk_models/5#") {
     google.charts.setOnLoadCallback(drawChart4);  
   }
 });
