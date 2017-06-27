@@ -34,8 +34,9 @@ class ProposalsController < ApplicationController
         end
       end
     else
-      # pdf_filename = File.join(Rails.root, "/public/#{@proposal.pdf}")
-      pdf_filename = File.join("#{@proposal.pdf}")
+      # pdf_filename = File.join(Rails.root, "/public/#{@proposal.pdf}") 
+      # <--- This points to ActiveRecord
+      pdf_filename = File.join("#{@proposal.pdf}") # <--- This points to AWS SC
       send_file(pdf_filename, :filename => "#{@proposal.pdf}", :type => "application/pdf")
     end  
   end
