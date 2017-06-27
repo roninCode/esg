@@ -36,8 +36,9 @@ class ProposalsController < ApplicationController
     else
       # pdf_filename = File.join(Rails.root, "/public/#{@proposal.pdf}") 
       # <--- This points to ActiveRecord
-      pdf_filename = File.join("#{@proposal.pdf}") # <--- This points to AWS SC
-      send_file(pdf_filename, :filename => "#{@proposal.pdf}", :type => "application/pdf")
+      # pdf_filename = File.join("https://s3.amazonaws.com/ethicapital.herokuapp.com/#{@proposal.pdf.path}") # <--- This points to AWS SC
+      # send_file(pdf_filename, :filename => "#{@proposal.pdf}", :type => "application/pdf")
+      redirect_to "https://s3.amazonaws.com/ethicapital.herokuapp.com/#{@proposal.pdf.path}"
     end  
   end
 
