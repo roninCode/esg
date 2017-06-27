@@ -51,6 +51,8 @@ gem 'wkhtmltopdf-binary'
 gem 'carrierwave', '~> 1.0'
 # S3 Gem
 gem 'aws-sdk', '~> 2'
+# Fog helps Carrierwave upload to AWS 
+gem "fog-aws"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
