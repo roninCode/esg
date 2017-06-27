@@ -34,7 +34,8 @@ class ProposalsController < ApplicationController
         end
       end
     else
-      pdf_filename = File.join(Rails.root, "/public/#{@proposal.pdf}")
+      # pdf_filename = File.join(Rails.root, "/public/#{@proposal.pdf}")
+      pdf_filename = File.join("#{@proposal.pdf}")
       send_file(pdf_filename, :filename => "#{@proposal.pdf}", :type => "application/pdf")
     end  
   end
