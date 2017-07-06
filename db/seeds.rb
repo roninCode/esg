@@ -83,9 +83,9 @@
 #   {client_id: 17, question_1: 3, question_2: 3, question_3: 4, question_4: 3, question_5: 3, question_6: 2, question_7: 4, question_8: 3, question_9: 2, question_10: 4, question_11: 3, average: "65.3846153846154", advisor_id: 21}
 # ])
 RiskModel.create!([
-  {name: "Highest Risk", risk_level: 5, description: "This is the most risky", companies: nil, etfs: nil, stocks: 100, bonds: 0},
+  {name: "Low Risk", risk_level: 1, description: "This the lowest possible risk", companies: "", etfs: "", stocks: 20, bonds: 80},
   {name: "Mild Risk", risk_level: 2, description: "This model accepts moderate risk", companies: nil, etfs: nil, stocks: 40, bonds: 60},
   {name: "Moderate Risk", risk_level: 3, description: "This model is risky", companies: nil, etfs: nil, stocks: 60, bonds: 40},
-  {name: "Low Risk", risk_level: 1, description: "This the lowest possible risk", companies: "", etfs: "", stocks: 20, bonds: 80},
-  {name: "Elevated Risk", risk_level: 4, description: "This model is very risky---only for long term", companies: nil, etfs: nil, stocks: 80, bonds: 20}
+  {name: "Elevated Risk", risk_level: 4, description: "This model is very risky---only for long term", companies: nil, etfs: nil, stocks: 80, bonds: 20},
+  {name: "Highest Risk", risk_level: 5, description: "This is the most risky", companies: nil, etfs: nil, stocks: 100, bonds: 0}
 ])
